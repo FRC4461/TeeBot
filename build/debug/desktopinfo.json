@@ -1,0 +1,9 @@
+[
+  {
+    "name": "TeeBot",
+    "file": "C:\\Users\\vince\\OneDrive\\Documents\\GitHub\\TeeBot\\build\\libs\\TeeBot.jar",
+    "extensions": [],
+    "librarydir": "C:\\Users\\vince\\OneDrive\\Documents\\GitHub\\TeeBot\\build\\tmp\\jniExtractDir",
+    "mainclass": "org.usfirst.frc.team4461.robot.Main"
+  }
+]
