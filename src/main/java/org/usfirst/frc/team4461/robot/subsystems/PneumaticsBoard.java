@@ -8,6 +8,7 @@
 package org.usfirst.frc.team4461.robot.subsystems;
 
 import org.usfirst.frc.team4461.robot.RobotMap;
+import org.usfirst.frc.team4461.robot.commands.pneumaticcommands.*;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -31,7 +32,7 @@ public class PneumaticsBoard extends Subsystem {
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
-    // setDefaultCommand(new MySpecialCommand());
+    setDefaultCommand(new ReversePiston());
   }
 
 }

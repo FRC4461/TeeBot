@@ -15,7 +15,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import org.usfirst.frc.team4461.robot.commands.Drive;
+import org.usfirst.frc.team4461.robot.commands.chassiscommands.*;
 import org.usfirst.frc.team4461.robot.subsystems.Chassis;
 import org.usfirst.frc.team4461.robot.subsystems.PneumaticsBoard;
 
@@ -45,6 +45,7 @@ public class Robot extends TimedRobot {
 	public void robotInit() {
 		RobotMap.init();
 		m_Chassis.init();
+		m_oi = new OI();
 		RobotMap.c.setClosedLoopControl(true);
 		NetworkTableInstance inst = NetworkTableInstance.getDefault();
 		gripTable = inst.getTable("GRIP");
@@ -53,7 +54,6 @@ public class Robot extends TimedRobot {
 
 		//UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();
 		//camera.setResolution(640,480);
-		m_oi = new OI();
 		m_chooser.setDefaultOption("Default Auto", new Drive());
 		// chooser.addObject("My Auto", new MyAutoCommand());
 		SmartDashboard.putData("Auto mode", m_chooser);
@@ -150,12 +150,6 @@ public class Robot extends TimedRobot {
 	@Override
 	public void teleopPeriodic() {
 		Scheduler.getInstance().run();
-		boolean enabled = RobotMap.c.enabled();
-		System.out.println("Enable value " +enabled);
-		boolean pressureSwitchVal = RobotMap.c.getPressureSwitchValue();
-		System.out.println("Pressure switch value " + pressureSwitchVal);
-		double voltage = RobotMap.c.getCompressorCurrent();
-		System.out.println("Compressor current " +voltage);
 		
 		double[] leftLengths = leftTable.getEntry("length").getDoubleArray(new double[]{});
 		double[] rightLengths = rightTable.getEntry("length").getDoubleArray(new double[]{});
@@ -166,7 +160,7 @@ public class Robot extends TimedRobot {
 		double val = RobotMap.ai.getVoltage();
 		double ultraSens = (val*102)/2.54;
 
-		System.out.println(ultraSens + " Distance for ultrasonic?");
+		System.out.println("Ultrasonic distance " + ultraSens);
 	}
 
 	/**

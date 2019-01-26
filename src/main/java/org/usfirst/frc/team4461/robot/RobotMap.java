@@ -35,9 +35,9 @@ public class RobotMap {
         frontLeft = new WPI_TalonSRX(2);
         frontRight = new WPI_TalonSRX(3);
         backLeft = new WPI_TalonSRX(4);
+        
         c = new Compressor(0);
         doubleSolenoid = new DoubleSolenoid(0,1);
-        
         
         ai = new AnalogInput(3);
     }

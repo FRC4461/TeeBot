@@ -5,15 +5,15 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package org.usfirst.frc.team4461.robot.commands;
+package org.usfirst.frc.team4461.robot.commands.pneumaticcommands;
 
 import org.usfirst.frc.team4461.robot.Robot;
 import org.usfirst.frc.team4461.robot.subsystems.PneumaticsBoard;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-public class ForwardPiston extends Command {
-  public ForwardPiston() {
+public class ReversePiston extends Command {
+  public ReversePiston() {
     // Use requires() here to declare subsystem dependencies
     requires(Robot.m_PneumaticsBoard);
   }
@@ -21,8 +21,8 @@ public class ForwardPiston extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    PneumaticsBoard.solenoidForward();
-    
+    PneumaticsBoard.solenoidReverse();
+
   }
 
   // Called repeatedly when this Command is scheduled to run
