@@ -17,6 +17,7 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.usfirst.frc.team4461.robot.commands.chassiscommands.*;
+import org.usfirst.frc.team4461.robot.subsystems.Camera;
 import org.usfirst.frc.team4461.robot.subsystems.Chassis;
 import org.usfirst.frc.team4461.robot.subsystems.PneumaticsBoard;
 import org.usfirst.frc.team4461.robot.subsystems.Ultrasound;
@@ -34,9 +35,8 @@ public class Robot extends TimedRobot {
 	public static Chassis m_Chassis = new Chassis();
 	public static PneumaticsBoard m_PneumaticsBoard = new PneumaticsBoard();
 	public static Ultrasound m_Ultrasound = new Ultrasound();
+	public static Camera m_Camera = new Camera();
 	public static OI m_oi;
-
-	public static UsbCamera camera1;
 
 	public static double[] leftLengths, rightLengths;
 	public static double[] leftX1, leftX2, leftY1, leftY2;
@@ -61,9 +61,6 @@ public class Robot extends TimedRobot {
 		gripTable = inst.getTable("GRIP");
 		leftTable = gripTable.getSubTable("leftLineReport");
 		rightTable = gripTable.getSubTable("rightLineReport");
-
-		camera1 = CameraServer.getInstance().startAutomaticCapture(0);
-		camera1.setResolution(640, 280);
 
 		m_chooser.setDefaultOption("Default Auto", new Drive());
 		// chooser.addObject("My Auto", new MyAutoCommand());

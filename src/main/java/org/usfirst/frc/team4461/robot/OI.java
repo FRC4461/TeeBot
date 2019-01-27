@@ -11,6 +11,8 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+
+import org.usfirst.frc.team4461.robot.commands.cameracommands.CycleCams;
 import org.usfirst.frc.team4461.robot.commands.pneumaticcommands.*;
 
 /**
@@ -21,7 +23,7 @@ public class OI {
 
 	public static Joystick leftJoystick;
 	public static Joystick rightJoystick;
-	public static JoystickButton two, three;
+	public static JoystickButton one, two, three;
 
 	public static XboxController minecraftPig;
 
@@ -30,8 +32,10 @@ public class OI {
 		rightJoystick = new Joystick(1);
 		minecraftPig = new XboxController(2);
 
+		one = new JoystickButton(rightJoystick, 1);
 		two = new JoystickButton(leftJoystick, 2);
 		three = new JoystickButton(leftJoystick, 3);
+		one.toggleWhenPressed(new CycleCams());
 		two.toggleWhenPressed(new ForwardPiston());
 		three.toggleWhenPressed(new ReversePiston());
 	}
