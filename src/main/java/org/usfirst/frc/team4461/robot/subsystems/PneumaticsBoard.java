@@ -24,9 +24,9 @@ public class PneumaticsBoard extends Subsystem {
     RobotMap.doubleSolenoid.set(Value.kReverse);
   }
 
-  public static void solenoidForward () {
+  public static void solenoidForward() {
     RobotMap.doubleSolenoid.set(Value.kForward);
-    
+
   }
 
   @Override
@@ -36,4 +36,3 @@ public class PneumaticsBoard extends Subsystem {
   }
 
 }
-

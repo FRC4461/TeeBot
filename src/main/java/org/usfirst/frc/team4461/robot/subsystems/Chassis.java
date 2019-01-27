@@ -25,20 +25,18 @@ public class Chassis extends Subsystem {
 	private static MecanumDrive mDrive;
 
 	public void initDefaultCommand() {
-		setDefaultCommand (new Drive());
+		setDefaultCommand(new Drive());
 		// Set the default command for a subsystem here.
 	}
 
-	public void init(){
-	mDrive = new MecanumDrive(RobotMap.frontLeft, RobotMap.backLeft,
-    RobotMap.frontRight, RobotMap.backRight);
+	public void init() {
+		mDrive = new MecanumDrive(RobotMap.frontLeft, RobotMap.backLeft, RobotMap.frontRight, RobotMap.backRight);
 	}
 
-	public void Driving (double yVal, double xVal, double zVal) {
-		double ySpeed = yVal ;
+	public void Driving(double yVal, double xVal, double zVal) {
+		double ySpeed = yVal;
 		double xSpeed = xVal;
 		double zRotation = zVal;
 		mDrive.driveCartesian(ySpeed, xSpeed, zRotation);
 	}
 }
-

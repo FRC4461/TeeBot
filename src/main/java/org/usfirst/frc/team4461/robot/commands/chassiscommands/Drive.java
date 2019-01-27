@@ -13,13 +13,13 @@ import org.usfirst.frc.team4461.robot.OI;
 import org.usfirst.frc.team4461.robot.Robot;
 
 /**
- * An example command.  You can replace me with your own command.
+ * An example command. You can replace me with your own command.
  */
 public class Drive extends Command {
     public Drive() {
         // Use requires() here to declare subsystem dependencies
         requires(Robot.m_Chassis);
-    
+
     }
 
     // Called just before this Command runs the first time
@@ -35,8 +35,8 @@ public class Drive extends Command {
         double ySpeed = OI.getLeftY();
         double zRotation = OI.getRightX();
 
-        Robot.m_Chassis.Driving(xSpeed, ySpeed, zRotation); 
-        
+        Robot.m_Chassis.Driving(xSpeed, ySpeed, zRotation);
+
     }
 
     // Make this return true when this Command no longer needs to run execute()

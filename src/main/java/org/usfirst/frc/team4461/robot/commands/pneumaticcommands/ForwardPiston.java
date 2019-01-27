@@ -22,7 +22,7 @@ public class ForwardPiston extends Command {
   @Override
   protected void initialize() {
     PneumaticsBoard.solenoidForward();
-    
+
   }
 
   // Called repeatedly when this Command is scheduled to run

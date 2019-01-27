@@ -18,19 +18,18 @@ import org.usfirst.frc.team4461.robot.commands.pneumaticcommands.*;
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
-	
+
 	public static Joystick leftJoystick;
 	public static Joystick rightJoystick;
 	public static JoystickButton two, three;
-	
 
 	public static XboxController minecraftPig;
-	
-	public OI (){
+
+	public OI() {
 		leftJoystick = new Joystick(0);
 		rightJoystick = new Joystick(1);
 		minecraftPig = new XboxController(2);
-		
+
 		two = new JoystickButton(leftJoystick, 2);
 		three = new JoystickButton(leftJoystick, 3);
 		two.toggleWhenPressed(new ForwardPiston());
@@ -39,8 +38,9 @@ public class OI {
 
 	public static boolean buttonA() {
 		return minecraftPig.getAButton();
-	
+
 	}
+
 	public static boolean buttonB() {
 		return minecraftPig.getBButton();
 	}
@@ -57,7 +57,7 @@ public class OI {
 		return leftJoystick.getZ();
 	}
 
-	public static double getRightX(){
+	public static double getRightX() {
 		return rightJoystick.getX();
 	}
 }

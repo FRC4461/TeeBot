@@ -29,12 +29,12 @@ public class PistonController extends Command {
   protected void execute() {
     boolean aPressed = OI.buttonA();
     boolean bPressed = OI.buttonB();
-    
-    if(aPressed == true) {
+
+    if (aPressed) {
       PneumaticsBoard.solenoidForward();
-    } else if (bPressed ==true) {
+    } else if (bPressed) {
       PneumaticsBoard.solenoidReverse();
-    } 
+    }
 
   }
 
@@ -42,6 +42,7 @@ public class PistonController extends Command {
   protected boolean isFinished() {
     return false;
   }
+
   // Called once after isFinished returns true
   @Override
   protected void end() {
