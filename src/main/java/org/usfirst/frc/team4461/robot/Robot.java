@@ -7,10 +7,8 @@
 
 package org.usfirst.frc.team4461.robot;
 
-import edu.wpi.cscore.UsbCamera;
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableInstance;
-import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -19,6 +17,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.usfirst.frc.team4461.robot.commands.chassiscommands.*;
 import org.usfirst.frc.team4461.robot.subsystems.Camera;
 import org.usfirst.frc.team4461.robot.subsystems.Chassis;
+import org.usfirst.frc.team4461.robot.subsystems.Platform;
 import org.usfirst.frc.team4461.robot.subsystems.PneumaticsBoard;
 import org.usfirst.frc.team4461.robot.subsystems.Ultrasound;
 
@@ -36,6 +35,7 @@ public class Robot extends TimedRobot {
 	public static PneumaticsBoard m_PneumaticsBoard = new PneumaticsBoard();
 	public static Ultrasound m_Ultrasound = new Ultrasound();
 	public static Camera m_Camera = new Camera();
+	public static Platform m_Platform = new Platform();
 	public static OI m_oi;
 
 	public static double[] leftLengths, rightLengths;
@@ -167,9 +167,6 @@ public class Robot extends TimedRobot {
 
 		leftLengths = leftTable.getEntry("length").getDoubleArray(new double[] {});
 		rightLengths = rightTable.getEntry("length").getDoubleArray(new double[] {});
-
-		double[] leftAngles = leftTable.getEntry("angle").getDoubleArray(new double[] {});
-		double[] rightAngles = rightTable.getEntry("angle").getDoubleArray(new double[] {});
 	}
 
 	/**

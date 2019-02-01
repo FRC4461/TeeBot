@@ -7,33 +7,18 @@
 
 package org.usfirst.frc.team4461.robot.subsystems;
 
-import org.usfirst.frc.team4461.robot.commands.cameracommands.DefaultCamCommand;
+import org.usfirst.frc.team4461.robot.commands.platformcommands.PlatformDefault;
 
-import edu.wpi.cscore.UsbCamera;
-import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
- * Add your docs here.
+ * Add your docs here. no
  */
-public class Camera extends Subsystem {
-  // Put methods for controlling this subsystem
-  // here. Call these from Commands.
-
-  int cameraNumber;
+public class Platform extends Subsystem {
 
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
-    setDefaultCommand(new DefaultCamCommand());
-  }
-
-  public void startCamera(int camNumber){
-    cameraNumber = camNumber % 3;
-    UsbCamera cam = CameraServer.getInstance().startAutomaticCapture(cameraNumber);
-  }
-
-  public int getCurrentCamera(){
-    return cameraNumber;
+    setDefaultCommand(new PlatformDefault());
   }
 }

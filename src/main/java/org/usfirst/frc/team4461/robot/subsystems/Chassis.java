@@ -7,8 +7,6 @@
 
 package org.usfirst.frc.team4461.robot.subsystems;
 
-import com.ctre.phoenix.motorcontrol.ControlMode;
-
 import org.usfirst.frc.team4461.robot.RobotMap;
 import org.usfirst.frc.team4461.robot.commands.chassiscommands.Drive;
 

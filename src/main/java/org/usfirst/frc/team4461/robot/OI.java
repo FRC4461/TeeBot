@@ -9,7 +9,6 @@ package org.usfirst.frc.team4461.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
-import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 import org.usfirst.frc.team4461.robot.commands.cameracommands.CycleCams;
@@ -30,7 +29,7 @@ public class OI {
 	public OI() {
 		leftJoystick = new Joystick(0);
 		rightJoystick = new Joystick(1);
-		minecraftPig = new XboxController(2);
+        minecraftPig = new XboxController(2);
 
 		one = new JoystickButton(rightJoystick, 1);
 		two = new JoystickButton(leftJoystick, 2);

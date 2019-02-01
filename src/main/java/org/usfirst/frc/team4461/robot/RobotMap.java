@@ -21,14 +21,21 @@ import edu.wpi.first.wpilibj.DoubleSolenoid;
  */
 public class RobotMap {
 
+    //Pneumatics stuff
     public static DoubleSolenoid doubleSolenoid;
     public static Compressor c;
 
+    //Drivebase motors
     public static WPI_TalonSRX frontLeft;
     public static WPI_TalonSRX backLeft;
     public static WPI_TalonSRX frontRight;
     public static WPI_TalonSRX backRight;
 
+    //Platform motors
+    public static WPI_TalonSRX platformFront;
+    public static WPI_TalonSRX platformBack;
+
+    //Ultrasound
     public static AnalogInput ai;
 
     public static void init() {
@@ -37,14 +44,12 @@ public class RobotMap {
         frontRight = new WPI_TalonSRX(3);
         backLeft = new WPI_TalonSRX(4);
 
+        platformFront = new WPI_TalonSRX(5);
+        platformBack = new WPI_TalonSRX(6);
+
         c = new Compressor(0);
         doubleSolenoid = new DoubleSolenoid(0, 1);
 
         ai = new AnalogInput(3);
     }
-
-    // If you are using multiple modules, make sure to define both the port
-    // number and the module. For example you with a rangefinder:
-    // public static int rangefinderPort = 1;
-    // public static int rangefinderModule = 1;
 }

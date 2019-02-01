@@ -5,32 +5,24 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package org.usfirst.frc.team4461.robot.commands.cameracommands;
-
-import org.usfirst.frc.team4461.robot.Robot;
+package org.usfirst.frc.team4461.robot.commands.platformcommands;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-public class CycleCams extends Command {
-
-  private int camNumber;
-
-  public CycleCams() {
+public class GoDown extends Command {
+  public GoDown() {
     // Use requires() here to declare subsystem dependencies
-    requires(Robot.m_Camera);
+    // eg. requires(chassis);
   }
 
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    camNumber = (Robot.m_Camera.getCurrentCamera() + 1);
-    Robot.m_Camera.startCamera(camNumber);
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    
   }
 
   // Make this return true when this Command no longer needs to run execute()
