@@ -16,6 +16,7 @@ import org.usfirst.frc.team4461.robot.Robot;
  * An example command. You can replace me with your own command.
  */
 public class Drive extends Command {
+    
     public Drive() {
         // Use requires() here to declare subsystem dependencies
         requires(Robot.chassis);
@@ -27,7 +28,7 @@ public class Drive extends Command {
     protected void initialize() {
     }
 
-    // Called repeatedly when this Command is scheduled to run
+    // Called repeatedly  Command is scheduled to run
     @Override
     protected void execute() {
 

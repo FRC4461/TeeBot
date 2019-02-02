@@ -7,12 +7,14 @@
 
 package org.usfirst.frc.team4461.robot.commands.platformcommands;
 
+import org.usfirst.frc.team4461.robot.Robot;
+
 import edu.wpi.first.wpilibj.command.Command;
 
 public class GoDown extends Command {
   public GoDown() {
     // Use requires() here to declare subsystem dependencies
-    // eg. requires(chassis);
+    requires(Robot.platform);
   }
 
   // Called just before this Command runs the first time

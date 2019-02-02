@@ -25,12 +25,12 @@ public class DriveForward extends Command {
   @Override
   protected void initialize() {
     distanceTarget = 5;
+    System.out.println("Moving forward...");
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    System.out.println("Moving forward...");
     currentDistance = Robot.ultrasound.getUltraDistance();
     if (currentDistance > distanceTarget) {
       Robot.chassis.Driving(0, fSpeed, 0);

@@ -57,6 +57,7 @@ public class Robot extends TimedRobot {
 		chassis.init();
 		oi = new OI();
 		RobotMap.c.setClosedLoopControl(true);
+		
 		NetworkTableInstance inst = NetworkTableInstance.getDefault();
 		gripTable = inst.getTable("GRIP");
 		leftTable = gripTable.getSubTable("leftLineReport");
@@ -65,6 +66,8 @@ public class Robot extends TimedRobot {
 		m_chooser.setDefaultOption("Default Auto", new Drive());
 		// chooser.addObject("My Auto", new MyAutoCommand());
 		SmartDashboard.putData("Auto mode", m_chooser);
+		
+		System.out.println("Robot initalized");
 	}
 
 	/**

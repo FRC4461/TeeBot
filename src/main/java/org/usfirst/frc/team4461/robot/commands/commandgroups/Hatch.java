@@ -17,6 +17,7 @@ public class Hatch extends CommandGroup {
    * Add your docs here.
    */
   public Hatch() {
+    System.out.println("Starting auto routine...");
     addSequential(new AlignRobot());
     addSequential(new DriveForward(0.5));
   }

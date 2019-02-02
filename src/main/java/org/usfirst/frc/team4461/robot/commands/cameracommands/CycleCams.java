@@ -25,6 +25,7 @@ public class CycleCams extends Command {
   protected void initialize() {
     camNumber = (Robot.camera.getCurrentCamera() + 1);
     Robot.camera.startCamera(camNumber);
+    System.out.println(camNumber);
   }
 
   // Called repeatedly when this Command is scheduled to run

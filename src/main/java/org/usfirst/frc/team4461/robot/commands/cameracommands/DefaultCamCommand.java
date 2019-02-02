@@ -23,6 +23,7 @@ public class DefaultCamCommand extends Command {
   @Override
   protected void initialize() {
     UsbCamera camera1 = CameraServer.getInstance().startAutomaticCapture(0);
+    System.out.println("Camera 1 initialized");
   }
 
   // Called repeatedly when this Command is scheduled to run

@@ -35,13 +35,13 @@ public class AlignRobot extends Command {
     cameraDeadRight = cameraHalf + deadZone;
     lSpeed = -0.3;
     rSpeed = 0.3;
+    System.out.println("Aligning...");
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
     // Do alignment calcs
-    System.out.println("Aligning...");
     if (Robot.leftX1.length >= 1 && Robot.leftX2.length >= 1 && Robot.rightX1.length >= 1
         && Robot.rightX2.length >= 1) {
       leftCenter = (Robot.leftX1[0] + Robot.leftX2[0]) / 2;
