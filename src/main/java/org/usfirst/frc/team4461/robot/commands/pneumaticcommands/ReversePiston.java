@@ -15,7 +15,7 @@ import edu.wpi.first.wpilibj.command.Command;
 public class ReversePiston extends Command {
   public ReversePiston() {
     // Use requires() here to declare subsystem dependencies
-    requires(Robot.m_PneumaticsBoard);
+    requires(Robot.pneumaticsBoard);
   }
 
   // Called just before this Command runs the first time

@@ -18,7 +18,7 @@ import org.usfirst.frc.team4461.robot.Robot;
 public class Drive extends Command {
     public Drive() {
         // Use requires() here to declare subsystem dependencies
-        requires(Robot.m_Chassis);
+        requires(Robot.chassis);
 
     }
 
@@ -35,7 +35,7 @@ public class Drive extends Command {
         double ySpeed = OI.getLeftY();
         double zRotation = OI.getRightX();
 
-        Robot.m_Chassis.Driving(xSpeed, ySpeed, zRotation);
+        Robot.chassis.Driving(xSpeed, ySpeed, zRotation);
 
     }
 

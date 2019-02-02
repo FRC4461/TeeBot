@@ -14,7 +14,7 @@ import edu.wpi.first.wpilibj.command.Command;
 public class PlatformDefault extends Command {
   public PlatformDefault() {
     // Use requires() here to declare subsystem dependencies
-    requires(Robot.m_Platform);
+    requires(Robot.platform);
   }
 
   // Called just before this Command runs the first time

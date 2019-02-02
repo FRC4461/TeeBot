@@ -16,7 +16,7 @@ import org.usfirst.frc.team4461.robot.*;
 public class PistonController extends Command {
   public PistonController() {
     // Use requires() here to declare subsystem dependencies
-    requires(Robot.m_PneumaticsBoard);
+    requires(Robot.pneumaticsBoard);
   }
 
   // Called just before this Command runs the first time

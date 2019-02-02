@@ -16,7 +16,7 @@ import edu.wpi.first.wpilibj.command.Command;
 public class DefaultCamCommand extends Command {
   public DefaultCamCommand() {
     // Use requires() here to declare subsystem dependencies
-    requires(Robot.m_Camera);
+    requires(Robot.camera);
   }
 
   // Called just before this Command runs the first time

@@ -31,12 +31,12 @@ import org.usfirst.frc.team4461.robot.subsystems.Ultrasound;
  */
 
 public class Robot extends TimedRobot {
-	public static Chassis m_Chassis = new Chassis();
-	public static PneumaticsBoard m_PneumaticsBoard = new PneumaticsBoard();
-	public static Ultrasound m_Ultrasound = new Ultrasound();
-	public static Camera m_Camera = new Camera();
-	public static Platform m_Platform = new Platform();
-	public static OI m_oi;
+	public static Chassis chassis = new Chassis();
+	public static PneumaticsBoard pneumaticsBoard = new PneumaticsBoard();
+	public static Ultrasound ultrasound = new Ultrasound();
+	public static Camera camera = new Camera();
+	public static Platform platform = new Platform();
+	public static OI oi;
 
 	public static double[] leftLengths, rightLengths;
 	public static double[] leftX1, leftX2, leftY1, leftY2;
@@ -54,8 +54,8 @@ public class Robot extends TimedRobot {
 	@Override
 	public void robotInit() {
 		RobotMap.init();
-		m_Chassis.init();
-		m_oi = new OI();
+		chassis.init();
+		oi = new OI();
 		RobotMap.c.setClosedLoopControl(true);
 		NetworkTableInstance inst = NetworkTableInstance.getDefault();
 		gripTable = inst.getTable("GRIP");

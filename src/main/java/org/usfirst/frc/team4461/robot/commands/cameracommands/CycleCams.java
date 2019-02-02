@@ -17,14 +17,14 @@ public class CycleCams extends Command {
 
   public CycleCams() {
     // Use requires() here to declare subsystem dependencies
-    requires(Robot.m_Camera);
+    requires(Robot.camera);
   }
 
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    camNumber = (Robot.m_Camera.getCurrentCamera() + 1);
-    Robot.m_Camera.startCamera(camNumber);
+    camNumber = (Robot.camera.getCurrentCamera() + 1);
+    Robot.camera.startCamera(camNumber);
   }
 
   // Called repeatedly when this Command is scheduled to run

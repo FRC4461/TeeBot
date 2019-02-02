@@ -18,7 +18,7 @@ public class DriveForward extends Command {
 
   public DriveForward(double forwardSpeed) {
     fSpeed = forwardSpeed;
-    requires(Robot.m_Chassis);
+    requires(Robot.chassis);
   }
 
   // Called just before this Command runs the first time
@@ -31,9 +31,9 @@ public class DriveForward extends Command {
   @Override
   protected void execute() {
     System.out.println("Moving forward...");
-    currentDistance = Robot.m_Ultrasound.getUltraDistance();
+    currentDistance = Robot.ultrasound.getUltraDistance();
     if (currentDistance > distanceTarget) {
-      Robot.m_Chassis.Driving(0, fSpeed, 0);
+      Robot.chassis.Driving(0, fSpeed, 0);
     }
   }
 

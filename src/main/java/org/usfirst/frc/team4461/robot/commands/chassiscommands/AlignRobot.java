@@ -23,7 +23,7 @@ public class AlignRobot extends Command {
   boolean commandDone = false;
 
   public AlignRobot() {
-    requires(Robot.m_Chassis);
+    requires(Robot.chassis);
   }
 
   // Called just before this Command runs the first time
@@ -51,17 +51,17 @@ public class AlignRobot extends Command {
         commandDone = true;
       } else if (trueCenter > cameraDeadRight) {
         double xVal = rSpeed;
-        Robot.m_Chassis.Driving(0, xVal, 0);
+        Robot.chassis.Driving(0, xVal, 0);
       } else if (trueCenter < cameraDeadleft) {
         double xVal = lSpeed;
-        Robot.m_Chassis.Driving(0, xVal, 0);
+        Robot.chassis.Driving(0, xVal, 0);
       }
     } else if (Robot.leftX1.length > 0 ) {
       double xVal = rSpeed;
-      Robot.m_Chassis.Driving(0, xVal, 0);
+      Robot.chassis.Driving(0, xVal, 0);
     } else if (Robot.rightX1.length > 0) {
       double xVal = lSpeed;
-      Robot.m_Chassis.Driving(0, xVal, 0);
+      Robot.chassis.Driving(0, xVal, 0);
     }
   }
 
