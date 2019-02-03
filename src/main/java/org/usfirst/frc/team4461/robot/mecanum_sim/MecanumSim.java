@@ -9,11 +9,10 @@ package org.usfirst.frc.team4461.robot.mecanum_sim;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
-import org.usfirst.frc.team4461.robot.*;
 /**
  * Add your docs here.
  */
-public class MecanumSim extends Robot{
+public class MecanumSim {
     
     public WPI_TalonSRX talon1;
     public WPI_TalonSRX talon2;
