@@ -15,7 +15,6 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.usfirst.frc.team4461.robot.commands.chassiscommands.*;
-import org.usfirst.frc.team4461.robot.mecanum_sim.MecanumSim;
 import org.usfirst.frc.team4461.robot.subsystems.Camera;
 import org.usfirst.frc.team4461.robot.subsystems.Chassis;
 import org.usfirst.frc.team4461.robot.subsystems.Platform;
@@ -37,7 +36,6 @@ public class Robot extends TimedRobot {
 	public static Ultrasound ultrasound = new Ultrasound();
 	public static Camera camera = new Camera();
 	public static Platform platform = new Platform();
-	public static MecanumSim sim = new MecanumSim();
 	public static OI oi;
 
 	public static double[] leftLengths, rightLengths;
