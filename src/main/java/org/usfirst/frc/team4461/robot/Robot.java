@@ -18,6 +18,7 @@ import org.usfirst.frc.team4461.robot.commands.chassiscommands.*;
 import org.usfirst.frc.team4461.robot.subsystems.Arm;
 import org.usfirst.frc.team4461.robot.subsystems.Camera;
 import org.usfirst.frc.team4461.robot.subsystems.Chassis;
+import org.usfirst.frc.team4461.robot.subsystems.GripPneumatics;
 import org.usfirst.frc.team4461.robot.subsystems.Gripper;
 import org.usfirst.frc.team4461.robot.subsystems.Platform;
 import org.usfirst.frc.team4461.robot.subsystems.Ultrasound;
@@ -38,6 +39,7 @@ public class Robot extends TimedRobot {
 	public static Platform platform = new Platform();
 	public static Arm arm = new Arm();
 	public static Gripper gripper = new Gripper();
+	public static GripPneumatics gripperPneumatics = new GripPneumatics();
 	public static OI oi;
 
 	public static double[] leftLengths, rightLengths;

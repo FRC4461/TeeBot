@@ -5,43 +5,40 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package org.usfirst.frc.team4461.robot.commands.armcommands;
+package org.usfirst.frc.team4461.robot.commands.pneumaticcommands;
 
-import org.usfirst.frc.team4461.robot.OI;
 import org.usfirst.frc.team4461.robot.Robot;
-import org.usfirst.frc.team4461.robot.subsystems.Arm;
+import org.usfirst.frc.team4461.robot.RobotMap;
 
+import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.command.Command;
 
-public class MoveArm extends Command {
-
-  public MoveArm() {
+public class DefaultPiston extends Command {
+  public DefaultPiston() {
     // Use requires() here to declare subsystem dependencies
-    requires(Robot.arm);
+    requires(Robot.gripperPneumatics);
   }
 
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
+    RobotMap.doubleSolenoid.set(Value.kForward);
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double speed = OI.pigRightStickY();
-    Arm.move(speed);
   }
 
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    return !Arm.getSwitch1() || !Arm.getSwitch2();
+    return false;
   }
 
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    Arm.stopArm();
   }
 
   // Called when another command which requires one or more of the same

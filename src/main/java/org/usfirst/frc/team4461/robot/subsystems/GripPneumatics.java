@@ -7,28 +7,30 @@
 
 package org.usfirst.frc.team4461.robot.subsystems;
 
-import com.ctre.phoenix.motorcontrol.ControlMode;
-
 import org.usfirst.frc.team4461.robot.RobotMap;
-import org.usfirst.frc.team4461.robot.commands.grippercommands.OperateGripper;
+import org.usfirst.frc.team4461.robot.commands.pneumaticcommands.DefaultPiston;
 
+import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
  * Add your docs here.
  */
-public class Gripper extends Subsystem {
+public class GripPneumatics extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
 
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
-    setDefaultCommand(new OperateGripper());
+    setDefaultCommand(new DefaultPiston());
   }
 
-  public static void runGripper(double pigGripSpeed){
-    RobotMap.leftGrip.set(ControlMode.PercentOutput, pigGripSpeed);
-    RobotMap.rightGrip.set(ControlMode.PercentOutput, -pigGripSpeed);
+  public static void pushPiston(){
+    RobotMap.doubleSolenoid.set(Value.kForward);
+  }
+
+  public static void pullPiston(){
+    RobotMap.doubleSolenoid.set(Value.kReverse);
   }
 }
