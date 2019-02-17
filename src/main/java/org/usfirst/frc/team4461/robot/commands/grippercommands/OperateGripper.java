@@ -7,12 +7,16 @@
 
 package org.usfirst.frc.team4461.robot.commands.grippercommands;
 
+import org.usfirst.frc.team4461.robot.OI;
+import org.usfirst.frc.team4461.robot.Robot;
+import org.usfirst.frc.team4461.robot.subsystems.Gripper;
+
 import edu.wpi.first.wpilibj.command.Command;
 
 public class OperateGripper extends Command {
   public OperateGripper() {
     // Use requires() here to declare subsystem dependencies
-    // eg. requires(chassis);
+    requires(Robot.gripper);
   }
 
   // Called just before this Command runs the first time
@@ -23,6 +27,8 @@ public class OperateGripper extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+    double pigGripper = OI.pigLeftSpeed();
+    Gripper.runGripper(pigGripper);
   }
 
   // Make this return true when this Command no longer needs to run execute()

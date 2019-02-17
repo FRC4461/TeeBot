@@ -41,7 +41,7 @@ public class RobotMap {
     public static WPI_TalonSRX arm;
 
     //Gripper motors
-    
+    public static WPI_TalonSRX leftGrip, rightGrip;
 
     //Ultrasound
     public static AnalogInput ai;
@@ -67,6 +67,9 @@ public class RobotMap {
         platformBack = new WPI_TalonSRX(6);
 
         arm = new WPI_TalonSRX(7);
+
+        leftGrip = new WPI_TalonSRX(8);
+        rightGrip = new WPI_TalonSRX(9);
 
         c = new Compressor(0);
         doubleSolenoid = new DoubleSolenoid(0, 1);

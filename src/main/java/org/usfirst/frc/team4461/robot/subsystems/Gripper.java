@@ -7,6 +7,12 @@
 
 package org.usfirst.frc.team4461.robot.subsystems;
 
+import com.ctre.phoenix.motorcontrol.ControlMode;
+
+import org.usfirst.frc.team4461.robot.RobotMap;
+import org.usfirst.frc.team4461.robot.commands.cameracommands.DefaultCamCommand;
+import org.usfirst.frc.team4461.robot.commands.grippercommands.OperateGripper;
+
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
@@ -19,9 +25,11 @@ public class Gripper extends Subsystem {
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
+    setDefaultCommand(new OperateGripper());
   }
 
-  public static void intake(){
-    
+  public static void runGripper(double pigGripSpeed){
+    RobotMap.leftGrip.set(ControlMode.PercentOutput, pigGripSpeed);
+    RobotMap.rightGrip.set(ControlMode.PercentOutput, -pigGripSpeed);
   }
 }
