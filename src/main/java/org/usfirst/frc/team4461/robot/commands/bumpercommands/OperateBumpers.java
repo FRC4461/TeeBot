@@ -5,29 +5,34 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package org.usfirst.frc.team4461.robot.commands.pneumaticcommands;
+package org.usfirst.frc.team4461.robot.commands.bumpercommands;
 
+import org.usfirst.frc.team4461.robot.OI;
 import org.usfirst.frc.team4461.robot.Robot;
-import org.usfirst.frc.team4461.robot.RobotMap;
 
-import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.command.Command;
 
-public class DefaultPiston extends Command {
-  public DefaultPiston() {
+public class OperateBumpers extends Command {
+  public OperateBumpers() {
     // Use requires() here to declare subsystem dependencies
-    requires(Robot.gripperPneumatics);
+    requires(Robot.bumperPneumatics);
   }
 
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    RobotMap.doubleSolenoid.set(Value.kForward);
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+    boolean leftBumperPress = OI.pigLeftBumper();
+    boolean rightBumperPress = OI.pigRightBumper();
+    if(leftBumperPress){
+      Robot.bumperPneumatics.detachBumper();
+    } else if(rightBumperPress){
+      Robot.bumperPneumatics.attachBumper();
+    }
   }
 
   // Make this return true when this Command no longer needs to run execute()

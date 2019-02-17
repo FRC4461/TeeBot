@@ -62,6 +62,14 @@ public class OI {
 		return minecraftPig.getTriggerAxis(Hand.kRight);
 	}
 
+	public static boolean pigLeftBumper(){
+		return minecraftPig.getBumper(Hand.kLeft);
+	}
+
+	public static boolean pigRightBumper(){
+		return minecraftPig.getBumper(Hand.kRight);
+	}
+
 	public static double getLeftY() {
 		return leftJoystick.getY();
 	}

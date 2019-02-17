@@ -24,7 +24,7 @@ import edu.wpi.first.wpilibj.DoubleSolenoid;
 public class RobotMap {
 
     //Pneumatics stuff
-    public static DoubleSolenoid doubleSolenoid;
+    public static DoubleSolenoid doubleSolenoid1, doubleSolenoid2;
     public static Compressor c;
 
     //Drivebase motors
@@ -72,7 +72,8 @@ public class RobotMap {
         rightGrip = new WPI_TalonSRX(9);
 
         c = new Compressor(0);
-        doubleSolenoid = new DoubleSolenoid(0, 1);
+        doubleSolenoid1 = new DoubleSolenoid(0, 1);
+        doubleSolenoid2 = new DoubleSolenoid(3, 4);
 
         ai = new AnalogInput(3);
 

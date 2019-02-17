@@ -16,6 +16,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.usfirst.frc.team4461.robot.commands.chassiscommands.*;
 import org.usfirst.frc.team4461.robot.subsystems.Arm;
+import org.usfirst.frc.team4461.robot.subsystems.BumperPneumatics;
 import org.usfirst.frc.team4461.robot.subsystems.Camera;
 import org.usfirst.frc.team4461.robot.subsystems.Chassis;
 import org.usfirst.frc.team4461.robot.subsystems.GripPneumatics;
@@ -40,6 +41,7 @@ public class Robot extends TimedRobot {
 	public static Arm arm = new Arm();
 	public static Gripper gripper = new Gripper();
 	public static GripPneumatics gripperPneumatics = new GripPneumatics();
+	public static BumperPneumatics bumperPneumatics = new BumperPneumatics();
 	public static OI oi;
 
 	public static double[] leftLengths, rightLengths;

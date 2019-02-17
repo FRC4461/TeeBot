@@ -8,7 +8,8 @@
 package org.usfirst.frc.team4461.robot.subsystems;
 
 import org.usfirst.frc.team4461.robot.RobotMap;
-import org.usfirst.frc.team4461.robot.commands.grippneumaticcommands.DefaultPiston;
+import org.usfirst.frc.team4461.robot.commands.armcommands.DefaultArm;
+import org.usfirst.frc.team4461.robot.commands.bumpercommands.DefaultBumper;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -16,21 +17,21 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 /**
  * Add your docs here.
  */
-public class GripPneumatics extends Subsystem {
+public class BumperPneumatics extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
 
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
-    setDefaultCommand(new DefaultPiston());
+    setDefaultCommand(new DefaultBumper());
   }
 
-  public static void pushPiston(){
-    RobotMap.doubleSolenoid1.set(Value.kForward);
+  public static void detachBumper(){
+    RobotMap.doubleSolenoid2.set(Value.kForward);
   }
-
-  public static void pullPiston(){
-    RobotMap.doubleSolenoid1.set(Value.kReverse);
+  
+  public static void attachBumper(){
+    RobotMap.doubleSolenoid2.set(Value.kReverse);
   }
 }

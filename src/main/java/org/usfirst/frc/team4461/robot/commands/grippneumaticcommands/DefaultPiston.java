@@ -5,16 +5,16 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package org.usfirst.frc.team4461.robot.commands.pneumaticcommands;
+package org.usfirst.frc.team4461.robot.commands.grippneumaticcommands;
 
-import org.usfirst.frc.team4461.robot.OI;
 import org.usfirst.frc.team4461.robot.Robot;
 import org.usfirst.frc.team4461.robot.RobotMap;
 
+import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.command.Command;
 
-public class OperateGripPneumatics extends Command {
-  public OperateGripPneumatics() {
+public class DefaultPiston extends Command {
+  public DefaultPiston() {
     // Use requires() here to declare subsystem dependencies
     requires(Robot.gripperPneumatics);
   }
@@ -22,18 +22,12 @@ public class OperateGripPneumatics extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
+    RobotMap.doubleSolenoid1.set(Value.kForward);
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    boolean isAPressed  = OI.minecraftPig.getAButton();
-    boolean isBPressed  = OI.minecraftPig.getBButton();
-    if(isAPressed){
-      Robot.gripperPneumatics.pushPiston();
-    } else if(isBPressed){
-      Robot.gripperPneumatics.pullPiston();
-    }
   }
 
   // Make this return true when this Command no longer needs to run execute()
