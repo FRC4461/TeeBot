@@ -27,7 +27,7 @@ public class OperateGripper extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double pigGripper = OI.pigLeftSpeed();
+    double pigGripper = OI.pigLeftStickY();
     Gripper.runGripper(pigGripper);
   }
 

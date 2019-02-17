@@ -38,11 +38,11 @@ public class OI {
 
 	}
 
-	public static double pigRightSpeed(){
+	public static double pigRightStickY(){
 		return minecraftPig.getY(Hand.kRight);
 	}
 
-	public static double pigLeftSpeed(){
+	public static double pigLeftStickY(){
 		return minecraftPig.getY(Hand.kLeft);
 	}
 
@@ -52,6 +52,14 @@ public class OI {
 
 	public static boolean pigAButton() {
 		return minecraftPig.getAButton();
+	}
+
+	public static double pigLeftTrigger(){
+		return minecraftPig.getTriggerAxis(Hand.kLeft);
+	}
+
+	public static double pigRightTrigger(){
+		return minecraftPig.getTriggerAxis(Hand.kRight);
 	}
 
 	public static double getLeftY() {

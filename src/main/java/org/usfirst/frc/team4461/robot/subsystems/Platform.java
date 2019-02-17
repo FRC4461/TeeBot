@@ -7,6 +7,9 @@
 
 package org.usfirst.frc.team4461.robot.subsystems;
 
+import com.ctre.phoenix.motorcontrol.ControlMode;
+
+import org.usfirst.frc.team4461.robot.RobotMap;
 import org.usfirst.frc.team4461.robot.commands.platformcommands.PlatformDefault;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -21,4 +24,20 @@ public class Platform extends Subsystem {
     // Set the default command for a subsystem here.
     setDefaultCommand(new PlatformDefault());
   }
+
+  public static void platformUp(double speed){
+    RobotMap.platformFront.set(ControlMode.PercentOutput, speed);
+    RobotMap.platformBack.set(ControlMode.PercentOutput, speed);
+  }
+
+  public static void platformDown(double speed){
+    RobotMap.platformFront.set(ControlMode.PercentOutput, speed);
+    RobotMap.platformBack.set(ControlMode.PercentOutput, speed);
+  }
+
+  public static void stopPlatform(){
+    RobotMap.platformFront.set(0);
+    RobotMap.platformBack.set(0);    
+  }
+
 }

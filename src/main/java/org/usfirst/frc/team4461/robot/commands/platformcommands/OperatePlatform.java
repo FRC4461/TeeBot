@@ -7,12 +7,16 @@
 
 package org.usfirst.frc.team4461.robot.commands.platformcommands;
 
+import org.usfirst.frc.team4461.robot.OI;
 import org.usfirst.frc.team4461.robot.Robot;
+import org.usfirst.frc.team4461.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-public class GoUp extends Command {
-  public GoUp() {
+public class OperatePlatform extends Command {
+  double deadZone;
+  double maxDownSpeed;
+  public OperatePlatform() {
     // Use requires() here to declare subsystem dependencies
     requires(Robot.platform);
   }
@@ -20,23 +24,36 @@ public class GoUp extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    System.out.println("Going up");
+    deadZone = 0.1;
+    maxDownSpeed = 0.3;
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+    double rightTriggerAxis = OI.pigRightTrigger();
+    double leftTriggerAxis = OI.pigLeftTrigger();
+    double differenceOfAxis = leftTriggerAxis - rightTriggerAxis;
+
+    if (differenceOfAxis > deadZone) {
+        Robot.platform.platformUp(differenceOfAxis);
+    } else if (differenceOfAxis < deadZone) {
+      Robot.platform.platformUp(-differenceOfAxis * maxDownSpeed);
+    } else {
+        Robot.platform.stopPlatform();
+    }
   }
 
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    return false;
+    return !RobotMap.switch3.get() || !RobotMap.switch4.get();
   }
 
   // Called once after isFinished returns true
   @Override
   protected void end() {
+    Robot.platform.stopPlatform();
   }
 
   // Called when another command which requires one or more of the same
