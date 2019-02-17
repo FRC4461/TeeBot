@@ -15,6 +15,7 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.usfirst.frc.team4461.robot.commands.chassiscommands.*;
+import org.usfirst.frc.team4461.robot.subsystems.Arm;
 import org.usfirst.frc.team4461.robot.subsystems.Camera;
 import org.usfirst.frc.team4461.robot.subsystems.Chassis;
 import org.usfirst.frc.team4461.robot.subsystems.Platform;
@@ -36,6 +37,7 @@ public class Robot extends TimedRobot {
 	public static Ultrasound ultrasound = new Ultrasound();
 	public static Camera camera = new Camera();
 	public static Platform platform = new Platform();
+	public static Arm arm = new Arm();
 	public static OI oi;
 
 	public static double[] leftLengths, rightLengths;
@@ -69,23 +71,6 @@ public class Robot extends TimedRobot {
 		
 		System.out.println("Robot initalized");
 	}
-
-	/**
-	 * @Override Advanced cam system with proccessing public void robotInit() { new
-	 *           Thread(() -> { UsbCamera camera =
-	 *           CameraServer.getInstance().startAutomaticCapture();
-	 *           camera.setResolution(640, 480);
-	 * 
-	 *           CvSink cvSink = CameraServer.getInstance().getVideo(); CvSource
-	 *           outputStream = CameraServer.getInstance().putVideo("Blur", 640,
-	 *           480);
-	 * 
-	 *           Mat source = new Mat(); Mat output = new Mat();
-	 * 
-	 *           while(!Thread.interrupted()) { cvSink.grabFrame(source);
-	 *           Imgproc.cvtColor(source, output, Imgproc.COLOR_BGR2GRAY);
-	 *           outputStream.putFrame(output); } }).start(); }
-	 */
 
 	/**
 	 * This function is called once each time the robot enters Disabled mode. You

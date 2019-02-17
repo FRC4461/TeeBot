@@ -9,6 +9,7 @@ package org.usfirst.frc.team4461.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import org.usfirst.frc.team4461.robot.commands.pneumaticcommands.*;
 
@@ -36,16 +37,24 @@ public class OI {
 		//one.toggleWhenPressed(new CycleCams());
 		left1.toggleWhenPressed(new ForwardPiston());
 		right1.toggleWhenPressed(new ReversePiston());
+
+
 	}
 
 	public static boolean buttonA() {
 		return minecraftPig.getAButton();
-
 	}
 
+	public static double pigRightSpeed(){
+		return minecraftPig.getY(Hand.kRight);
+	}
+
+	public static double pigLeftSpeed(){
+		return minecraftPig.getY(Hand.kLeft);
+	}
 	public static boolean buttonB() {
 		return minecraftPig.getBButton();
-	}
+	}	
 
 	public static double getLeftY() {
 		return leftJoystick.getY();

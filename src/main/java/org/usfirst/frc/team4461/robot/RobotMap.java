@@ -11,6 +11,8 @@ import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.Compressor;
+import edu.wpi.first.wpilibj.Counter;
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 
 /**
@@ -35,8 +37,25 @@ public class RobotMap {
     public static WPI_TalonSRX platformFront;
     public static WPI_TalonSRX platformBack;
 
+    //Arm motor
+    public static WPI_TalonSRX arm;
+
+    //Gripper motors
+    
+
     //Ultrasound
     public static AnalogInput ai;
+
+    //Arm limit switches
+    public static DigitalInput switch1, switch2;
+    //Arm counter
+    public static Counter counter1, counter2;
+
+    //Platform limit swithces
+    public static DigitalInput switch3, switch4;
+    //Platform counter
+    public static Counter counter3, counter4;
+
 
     public static void init() {
         backRight = new WPI_TalonSRX(1);
@@ -47,9 +66,21 @@ public class RobotMap {
         platformFront = new WPI_TalonSRX(5);
         platformBack = new WPI_TalonSRX(6);
 
+        arm = new WPI_TalonSRX(7);
+
         c = new Compressor(0);
         doubleSolenoid = new DoubleSolenoid(0, 1);
 
         ai = new AnalogInput(3);
+
+        switch1 = new DigitalInput(1);
+        switch2 = new DigitalInput(2);
+        switch3 = new DigitalInput(3);
+        switch4 = new DigitalInput(4);
+
+        counter1 = new Counter(switch1);
+        counter2 = new Counter(switch2);
+        counter3 = new Counter(switch3);
+        counter4 = new Counter(switch4);
     }
 }
