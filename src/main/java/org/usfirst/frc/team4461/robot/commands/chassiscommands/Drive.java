@@ -20,7 +20,6 @@ public class Drive extends Command {
     public Drive() {
         // Use requires() here to declare subsystem dependencies
         requires(Robot.chassis);
-
     }
 
     // Called just before this Command runs the first time

@@ -10,8 +10,6 @@ package org.usfirst.frc.team4461.robot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-
-import org.usfirst.frc.team4461.robot.commands.cameracommands.CycleCams;
 import org.usfirst.frc.team4461.robot.commands.pneumaticcommands.*;
 
 /**
@@ -22,7 +20,8 @@ public class OI {
 
 	public static Joystick leftJoystick;
 	public static Joystick rightJoystick;
-	public static JoystickButton one, two, three;
+	public static JoystickButton left1, left2, left3;
+	public static JoystickButton right1, right2, right3;
 
 	public static XboxController minecraftPig;
 
@@ -31,12 +30,12 @@ public class OI {
 		rightJoystick = new Joystick(1);
         minecraftPig = new XboxController(2);
 
-		one = new JoystickButton(rightJoystick, 1);
-		two = new JoystickButton(leftJoystick, 2);
-		three = new JoystickButton(leftJoystick, 3);
-		one.toggleWhenPressed(new CycleCams());
-		two.toggleWhenPressed(new ForwardPiston());
-		three.toggleWhenPressed(new ReversePiston());
+		left1 = new JoystickButton(leftJoystick, 1);
+		left2 = new JoystickButton(leftJoystick, 2);
+		left3 = new JoystickButton(leftJoystick, 3);
+		//one.toggleWhenPressed(new CycleCams());
+		left1.toggleWhenPressed(new ForwardPiston());
+		right1.toggleWhenPressed(new ReversePiston());
 	}
 
 	public static boolean buttonA() {
