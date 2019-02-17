@@ -20,7 +20,6 @@ import org.usfirst.frc.team4461.robot.subsystems.Camera;
 import org.usfirst.frc.team4461.robot.subsystems.Chassis;
 import org.usfirst.frc.team4461.robot.subsystems.Gripper;
 import org.usfirst.frc.team4461.robot.subsystems.Platform;
-import org.usfirst.frc.team4461.robot.subsystems.PneumaticsBoard;
 import org.usfirst.frc.team4461.robot.subsystems.Ultrasound;
 
 /**
@@ -34,7 +33,6 @@ import org.usfirst.frc.team4461.robot.subsystems.Ultrasound;
 
 public class Robot extends TimedRobot {
 	public static Chassis chassis = new Chassis();
-	public static PneumaticsBoard pneumaticsBoard = new PneumaticsBoard();
 	public static Ultrasound ultrasound = new Ultrasound();
 	public static Camera camera = new Camera();
 	public static Platform platform = new Platform();

@@ -11,7 +11,6 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-import org.usfirst.frc.team4461.robot.commands.pneumaticcommands.*;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -35,14 +34,8 @@ public class OI {
 		left2 = new JoystickButton(leftJoystick, 2);
 		left3 = new JoystickButton(leftJoystick, 3);
 		//one.toggleWhenPressed(new CycleCams());
-		left1.toggleWhenPressed(new ForwardPiston());
-		right1.toggleWhenPressed(new ReversePiston());
 
 
-	}
-
-	public static boolean buttonA() {
-		return minecraftPig.getAButton();
 	}
 
 	public static double pigRightSpeed(){
@@ -52,9 +45,14 @@ public class OI {
 	public static double pigLeftSpeed(){
 		return minecraftPig.getY(Hand.kLeft);
 	}
-	public static boolean buttonB() {
+
+	public static boolean pigBButton() {
 		return minecraftPig.getBButton();
 	}	
+
+	public static boolean pigAButton() {
+		return minecraftPig.getAButton();
+	}
 
 	public static double getLeftY() {
 		return leftJoystick.getY();
