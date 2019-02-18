@@ -25,17 +25,17 @@ public class Platform extends Subsystem {
     setDefaultCommand(new PlatformDefault());
   }
 
-  public static void platformUp(double speed){
+  public void platformUp(double speed){
     RobotMap.platformFront.set(ControlMode.PercentOutput, speed);
     RobotMap.platformBack.set(ControlMode.PercentOutput, speed);
   }
 
-  public static void platformDown(double speed){
+  public void platformDown(double speed){
     RobotMap.platformFront.set(ControlMode.PercentOutput, speed);
     RobotMap.platformBack.set(ControlMode.PercentOutput, speed);
   }
 
-  public static void stopPlatform(){
+  public void stopPlatform(){
     RobotMap.platformFront.set(0);
     RobotMap.platformBack.set(0);    
   }

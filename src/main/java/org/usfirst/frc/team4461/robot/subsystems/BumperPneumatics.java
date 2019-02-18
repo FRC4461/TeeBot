@@ -8,7 +8,6 @@
 package org.usfirst.frc.team4461.robot.subsystems;
 
 import org.usfirst.frc.team4461.robot.RobotMap;
-import org.usfirst.frc.team4461.robot.commands.armcommands.DefaultArm;
 import org.usfirst.frc.team4461.robot.commands.bumpercommands.DefaultBumper;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
@@ -27,11 +26,11 @@ public class BumperPneumatics extends Subsystem {
     setDefaultCommand(new DefaultBumper());
   }
 
-  public static void detachBumper(){
+  public void detachBumper(){
     RobotMap.doubleSolenoid2.set(Value.kForward);
   }
   
-  public static void attachBumper(){
+  public void attachBumper(){
     RobotMap.doubleSolenoid2.set(Value.kReverse);
   }
 }

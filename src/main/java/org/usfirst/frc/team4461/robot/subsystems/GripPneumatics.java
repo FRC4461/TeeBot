@@ -26,11 +26,11 @@ public class GripPneumatics extends Subsystem {
     setDefaultCommand(new DefaultPiston());
   }
 
-  public static void pushPiston(){
+  public void pushPiston(){
     RobotMap.doubleSolenoid1.set(Value.kForward);
   }
 
-  public static void pullPiston(){
+  public void pullPiston(){
     RobotMap.doubleSolenoid1.set(Value.kReverse);
   }
 }
