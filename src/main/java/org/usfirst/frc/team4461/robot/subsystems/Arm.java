@@ -10,21 +10,17 @@ package org.usfirst.frc.team4461.robot.subsystems;
 import com.ctre.phoenix.motorcontrol.ControlMode;
 
 import org.usfirst.frc.team4461.robot.RobotMap;
-import org.usfirst.frc.team4461.robot.commands.armcommands.DefaultArm;
+import org.usfirst.frc.team4461.robot.commands.armcommands.MoveArm;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
- * Add your docs here.
+ * Arm (the big up and down thing on the platform) subsystem.
  */
 public class Arm extends Subsystem {
-  // Put methods for controlling this subsystem
-  // here. Call these from Commands.
-
   @Override
   public void initDefaultCommand() {
-    // Set the default command for a subsystem here.
-    setDefaultCommand(new DefaultArm());
+    setDefaultCommand(new MoveArm());
   }
 
   public static void move(double speed){

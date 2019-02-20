@@ -13,11 +13,13 @@ import org.usfirst.frc.team4461.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Command;
 
+/**
+ * Command for bringing the platform up and down.
+ */
 public class OperatePlatform extends Command {
   double deadZone;
   double maxDownSpeed;
   public OperatePlatform() {
-    // Use requires() here to declare subsystem dependencies
     requires(Robot.platform);
   }
 
@@ -45,12 +47,15 @@ public class OperatePlatform extends Command {
   }
 
   // Make this return true when this Command no longer needs to run execute()
+  // If either of the limit switches are activated, tell the robot to stop the platform
+  // Todo: double check if the switches were assigned correctly.
   @Override
   protected boolean isFinished() {
     return !RobotMap.switch3.get() || !RobotMap.switch4.get();
   }
 
   // Called once after isFinished returns true
+  // The motors will be set to zero to stop the platform from continuing
   @Override
   protected void end() {
     Robot.platform.stopPlatform();

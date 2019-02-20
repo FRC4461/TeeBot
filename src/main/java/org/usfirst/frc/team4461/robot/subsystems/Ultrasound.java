@@ -12,7 +12,7 @@ import org.usfirst.frc.team4461.robot.RobotMap;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
- * Add your docs here.
+ * Ultrasound subsystem. Probably isn't used but I won't touch it.
  */
 public class Ultrasound extends Subsystem {
 

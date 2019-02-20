@@ -13,12 +13,11 @@ import org.usfirst.frc.team4461.robot.OI;
 import org.usfirst.frc.team4461.robot.Robot;
 
 /**
- * An example command. You can replace me with your own command.
+ * Mecanum drive command
  */
 public class Drive extends Command {
     
     public Drive() {
-        // Use requires() here to declare subsystem dependencies
         requires(Robot.chassis);
     }
 
@@ -36,7 +35,6 @@ public class Drive extends Command {
         double zRotation = OI.getRightX();
 
         Robot.chassis.Driving(ySpeed, xSpeed, zRotation);
-
     }
 
     // Make this return true when this Command no longer needs to run execute()

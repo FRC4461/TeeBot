@@ -10,19 +10,18 @@ package org.usfirst.frc.team4461.robot.subsystems;
 import com.ctre.phoenix.motorcontrol.ControlMode;
 
 import org.usfirst.frc.team4461.robot.RobotMap;
-import org.usfirst.frc.team4461.robot.commands.platformcommands.PlatformDefault;
+import org.usfirst.frc.team4461.robot.commands.platformcommands.OperatePlatform;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
- * Add your docs here. no
+ * Platform/Elevator subsystem. Separate from the Chassis.
  */
 public class Platform extends Subsystem {
 
   @Override
   public void initDefaultCommand() {
-    // Set the default command for a subsystem here.
-    setDefaultCommand(new PlatformDefault());
+    setDefaultCommand(new OperatePlatform());
   }
 
   public void platformUp(double speed){

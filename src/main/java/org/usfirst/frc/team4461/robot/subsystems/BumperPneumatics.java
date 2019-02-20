@@ -14,18 +14,17 @@ import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
- * Add your docs here.
+ * Pneumatics for attaching & detaching the bumper to the platform.
  */
 public class BumperPneumatics extends Subsystem {
-  // Put methods for controlling this subsystem
-  // here. Call these from Commands.
 
   @Override
   public void initDefaultCommand() {
-    // Set the default command for a subsystem here.
+    // Nicole: There is nothing in DefaultBumper(). But Vince said it was okay?
     setDefaultCommand(new DefaultBumper());
   }
 
+  // Todo: Review this. There are two sets of pneumatics for the bumper. I don't think this is complete.
   public void detachBumper(){
     RobotMap.doubleSolenoid2.set(Value.kForward);
   }

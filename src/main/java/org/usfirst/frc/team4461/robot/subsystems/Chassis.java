@@ -14,17 +14,13 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.MecanumDrive;
 
 /**
- * An example subsystem. You can replace me with your own Subsystem.
+ * The chassis (part that drives) subsystem.
  */
 public class Chassis extends Subsystem {
-	// Put methods for controlling this subsystem
-	// here. Call these from Commands.
-
 	private static MecanumDrive mDrive;
 
 	public void initDefaultCommand() {
 		setDefaultCommand(new Drive());
-		// Set the default command for a subsystem here.
 	}
 
 	public void init() {

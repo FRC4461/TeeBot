@@ -14,7 +14,6 @@ import edu.wpi.first.wpilibj.command.Command;
 
 public class OperateBumpers extends Command {
   public OperateBumpers() {
-    // Use requires() here to declare subsystem dependencies
     requires(Robot.bumperPneumatics);
   }
 

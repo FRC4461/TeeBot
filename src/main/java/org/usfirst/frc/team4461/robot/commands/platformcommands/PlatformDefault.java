@@ -11,6 +11,7 @@ import org.usfirst.frc.team4461.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
 
+// Nicole: Why does this exist
 public class PlatformDefault extends Command {
   public PlatformDefault() {
     // Use requires() here to declare subsystem dependencies

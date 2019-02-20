@@ -33,9 +33,6 @@ public class OI {
 		left1 = new JoystickButton(leftJoystick, 1);
 		left2 = new JoystickButton(leftJoystick, 2);
 		left3 = new JoystickButton(leftJoystick, 3);
-		//one.toggleWhenPressed(new CycleCams());
-
-
 	}
 
 	public static double pigRightStickY(){
@@ -76,10 +73,6 @@ public class OI {
 
 	public static double getLeftX() {
 		return leftJoystick.getX();
-	}
-
-	public static double getleftZ() {
-		return leftJoystick.getZ();
 	}
 
 	public static double getRightX() {

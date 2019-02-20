@@ -13,9 +13,11 @@ import org.usfirst.frc.team4461.robot.subsystems.Gripper;
 
 import edu.wpi.first.wpilibj.command.Command;
 
+/**
+ * Command for operating the gripper wheels (not pneumatics)
+ */
 public class OperateGripper extends Command {
   public OperateGripper() {
-    // Use requires() here to declare subsystem dependencies
     requires(Robot.gripper);
   }
 

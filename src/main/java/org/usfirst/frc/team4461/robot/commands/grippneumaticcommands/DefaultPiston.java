@@ -13,9 +13,11 @@ import org.usfirst.frc.team4461.robot.RobotMap;
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.command.Command;
 
+/**
+ * Set default position for the gripper pneumatics (apparently).
+ */
 public class DefaultPiston extends Command {
   public DefaultPiston() {
-    // Use requires() here to declare subsystem dependencies
     requires(Robot.gripperPneumatics);
   }
 

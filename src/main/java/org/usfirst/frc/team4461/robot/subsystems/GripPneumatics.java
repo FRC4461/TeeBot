@@ -14,18 +14,17 @@ import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
- * Add your docs here.
+ * Pneumatics for the gripper.
  */
 public class GripPneumatics extends Subsystem {
-  // Put methods for controlling this subsystem
-  // here. Call these from Commands.
 
   @Override
   public void initDefaultCommand() {
-    // Set the default command for a subsystem here.
+    // Nicole: I'm not entirely convinced that DefaultPiston() is the correct command here.
     setDefaultCommand(new DefaultPiston());
   }
 
+  // Todo: double check that the forward and reverse are correctly assigned to push vs pull
   public void pushPiston(){
     RobotMap.doubleSolenoid1.set(Value.kForward);
   }

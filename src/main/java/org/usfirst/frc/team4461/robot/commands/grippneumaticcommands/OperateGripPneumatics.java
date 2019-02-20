@@ -12,9 +12,11 @@ import org.usfirst.frc.team4461.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
 
+/**
+ * Command for operating gripper pneumatics during gameplay
+ */
 public class OperateGripPneumatics extends Command {
   public OperateGripPneumatics() {
-    // Use requires() here to declare subsystem dependencies
     requires(Robot.gripperPneumatics);
   }
 

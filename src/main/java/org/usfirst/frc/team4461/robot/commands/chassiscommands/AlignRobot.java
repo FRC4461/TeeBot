@@ -41,12 +41,14 @@ public class AlignRobot extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    // Do alignment calcs
+    // Do alignment calcs (Nicole: you should probably summarize what the calculations actually are)
+    // (but then again we prob aren't gonna use this at all.)
     if (Robot.leftX1.length >= 1 && Robot.leftX2.length >= 1 && Robot.rightX1.length >= 1
         && Robot.rightX2.length >= 1) {
       leftCenter = (Robot.leftX1[0] + Robot.leftX2[0]) / 2;
       rightCenter = (Robot.rightX1[0] + Robot.rightX2[0]) / 2;
       trueCenter = (leftCenter + rightCenter) / 2;
+
       if (trueCenter < cameraDeadRight && trueCenter > cameraDeadleft) {
         commandDone = true;
       } else if (trueCenter > cameraDeadRight) {

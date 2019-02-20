@@ -15,15 +15,12 @@ import org.usfirst.frc.team4461.robot.commands.grippercommands.OperateGripper;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
- * Add your docs here.
+ * Gripper wheels subsystem. (the name of the subsystem does not accurately reflect this, I know.
+ * Blame Vince.)
  */
 public class Gripper extends Subsystem {
-  // Put methods for controlling this subsystem
-  // here. Call these from Commands.
-
   @Override
   public void initDefaultCommand() {
-    // Set the default command for a subsystem here.
     setDefaultCommand(new OperateGripper());
   }
 
