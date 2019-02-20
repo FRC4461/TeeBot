@@ -35,7 +35,7 @@ public class Drive extends Command {
         double ySpeed = OI.getLeftY();
         double zRotation = OI.getRightX();
 
-        Robot.chassis.Driving(xSpeed, ySpeed, zRotation);
+        Robot.chassis.Driving(ySpeed, xSpeed, zRotation);
 
     }
 

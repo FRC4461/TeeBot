@@ -31,10 +31,7 @@ public class Chassis extends Subsystem {
 		mDrive = new MecanumDrive(RobotMap.frontLeft, RobotMap.backLeft, RobotMap.frontRight, RobotMap.backRight);
 	}
 
-	public void Driving(double yVal, double xVal, double zVal) {
-		double ySpeed = yVal;
-		double xSpeed = xVal;
-		double zRotation = zVal;
+	public void Driving(double ySpeed, double xSpeed, double zRotation) {
 		mDrive.driveCartesian(ySpeed, xSpeed, zRotation);
 	}
 }

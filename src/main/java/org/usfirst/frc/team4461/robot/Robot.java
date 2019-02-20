@@ -17,7 +17,6 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.usfirst.frc.team4461.robot.commands.chassiscommands.*;
 import org.usfirst.frc.team4461.robot.subsystems.Arm;
 import org.usfirst.frc.team4461.robot.subsystems.BumperPneumatics;
-import org.usfirst.frc.team4461.robot.subsystems.Camera;
 import org.usfirst.frc.team4461.robot.subsystems.Chassis;
 import org.usfirst.frc.team4461.robot.subsystems.GripPneumatics;
 import org.usfirst.frc.team4461.robot.subsystems.Gripper;
@@ -36,7 +35,6 @@ import org.usfirst.frc.team4461.robot.subsystems.Ultrasound;
 public class Robot extends TimedRobot {
 	public static Chassis chassis = new Chassis();
 	public static Ultrasound ultrasound = new Ultrasound();
-	public static Camera camera = new Camera();
 	public static Platform platform = new Platform();
 	public static Arm arm = new Arm();
 	public static Gripper gripper = new Gripper();
