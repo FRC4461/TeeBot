@@ -7,12 +7,14 @@
 
 package org.usfirst.frc.team4461.robot.commands.bumpercommands;
 
+import org.usfirst.frc.team4461.robot.Robot;
+
 import edu.wpi.first.wpilibj.command.Command;
 
 public class DefaultBumper extends Command {
   public DefaultBumper() {
     // Use requires() here to declare subsystem dependencies
-    // eg. requires(chassis);
+    requires(Robot.bumperPneumatics);
   }
 
   // Called just before this Command runs the first time
