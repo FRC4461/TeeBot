@@ -24,6 +24,7 @@ public class Platform extends Subsystem {
     setDefaultCommand(new OperatePlatform());
   }
 
+  /*
   public void platformUp(double speed){
     RobotMap.platformFront.set(ControlMode.PercentOutput, speed);
     RobotMap.platformBack.set(ControlMode.PercentOutput, speed);
@@ -32,6 +33,30 @@ public class Platform extends Subsystem {
   public void platformDown(double speed){
     RobotMap.platformFront.set(ControlMode.PercentOutput, speed);
     RobotMap.platformBack.set(ControlMode.PercentOutput, speed);
+  }
+  */
+
+  public void platformMove(double speed){
+    int frontEncoder = RobotMap.platformFront.getSelectedSensorPosition();
+    int backEncoder = RobotMap.platformBack.getSelectedSensorPosition();
+    int maxCountDifference = 1024;
+
+    // 1024 counts is roughly 0.085 inches if I can do math
+    if (frontEncoder - backEncoder > maxCountDifference){
+      RobotMap.platformFront.set(ControlMode.PercentOutput, 0);
+      RobotMap.platformBack.set(ControlMode.PercentOutput, speed);
+    } else if (backEncoder - frontEncoder > maxCountDifference){
+      RobotMap.platformFront.set(ControlMode.PercentOutput, speed);
+      RobotMap.platformBack.set(ControlMode.PercentOutput, 0);
+    } else {
+      RobotMap.platformFront.set(ControlMode.PercentOutput, speed);
+      RobotMap.platformBack.set(ControlMode.PercentOutput, speed);
+    }
+    try{
+      Thread.sleep(100);
+    } catch (Exception e){
+      // nothing
+    }
   }
 
   public void stopPlatform(){

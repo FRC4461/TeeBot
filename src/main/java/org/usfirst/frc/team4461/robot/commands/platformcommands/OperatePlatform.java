@@ -18,7 +18,7 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class OperatePlatform extends Command {
   double deadZone;
-  double maxDownSpeed;
+
   public OperatePlatform() {
     requires(Robot.platform);
   }
@@ -26,8 +26,7 @@ public class OperatePlatform extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    deadZone = 0.1;
-    maxDownSpeed = 0.3;
+    deadZone = 0.05;
   }
 
   // Called repeatedly when this Command is scheduled to run
@@ -37,10 +36,8 @@ public class OperatePlatform extends Command {
     double leftTriggerAxis = OI.pigLeftTrigger();
     double differenceOfAxis = leftTriggerAxis - rightTriggerAxis;
 
-    if (differenceOfAxis > deadZone) {
-        Robot.platform.platformUp(differenceOfAxis);
-    } else if (differenceOfAxis < deadZone) {
-      Robot.platform.platformUp(-differenceOfAxis * maxDownSpeed);
+    if (differenceOfAxis > deadZone || differenceOfAxis < deadZone) {
+        Robot.platform.platformMove(differenceOfAxis);
     } else {
         Robot.platform.stopPlatform();
     }
