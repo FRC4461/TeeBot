@@ -78,8 +78,8 @@ public class RobotMap {
         rightGrip = new WPI_TalonSRX(9);
 
         c = new Compressor(0);
-        doubleSolenoid1 = new DoubleSolenoid(0, 1);
-        doubleSolenoid2 = new DoubleSolenoid(3, 4);
+        doubleSolenoid1 = new DoubleSolenoid(2, 3);
+        doubleSolenoid2 = new DoubleSolenoid(0, 1);
 
         ai = new AnalogInput(3);
 
