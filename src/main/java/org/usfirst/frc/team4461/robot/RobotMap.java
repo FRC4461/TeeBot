@@ -14,6 +14,8 @@ import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.Counter;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.wpilibj.ADXRS450_Gyro;
+import edu.wpi.first.wpilibj.SPI;
 
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
@@ -48,14 +50,18 @@ public class RobotMap {
 
     //Arm limit switches
     public static DigitalInput switch1, switch2;
+
     //Arm counter
     public static Counter counter1, counter2;
 
     //Platform limit swithces
     public static DigitalInput switch3, switch4;
+
     //Platform counter
     public static Counter counter3, counter4;
 
+    //Gyro
+    public static ADXRS450_Gyro gyro;
 
     public static void init() {
         backRight = new WPI_TalonSRX(1);
@@ -86,5 +92,7 @@ public class RobotMap {
         counter2 = new Counter(switch2);
         counter3 = new Counter(switch3);
         counter4 = new Counter(switch4);
+
+        gyro = new ADXRS450_Gyro(SPI.Port.kOnboardCS0);
     }
 }
