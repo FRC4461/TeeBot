@@ -28,7 +28,7 @@ public class MoveArm extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double speed = OI.pigRightStickY();
+    double speed = Robot.m_oi.getArmDrive();
     Arm.move(speed);
   }
 

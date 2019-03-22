@@ -8,7 +8,7 @@
 package org.usfirst.frc.team4461.robot.subsystems;
 
 import org.usfirst.frc.team4461.robot.RobotMap;
-import org.usfirst.frc.team4461.robot.commands.grippneumaticcommands.DefaultPiston;
+import org.usfirst.frc.team4461.robot.commands.grippneumaticcommands.OperateGripPneumatics;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -21,15 +21,15 @@ public class GripPneumatics extends Subsystem {
   @Override
   public void initDefaultCommand() {
     // Nicole: I'm not entirely convinced that DefaultPiston() is the correct command here.
-    setDefaultCommand(new DefaultPiston());
+    setDefaultCommand(new OperateGripPneumatics());
   }
 
   // Todo: double check that the forward and reverse are correctly assigned to push vs pull
   public void pushPiston(){
-    RobotMap.doubleSolenoid1.set(Value.kForward);
+    RobotMap.hatchDoubleSolenoid.set(Value.kForward);
   }
 
   public void pullPiston(){
-    RobotMap.doubleSolenoid1.set(Value.kReverse);
+    RobotMap.hatchDoubleSolenoid.set(Value.kReverse);
   }
 }

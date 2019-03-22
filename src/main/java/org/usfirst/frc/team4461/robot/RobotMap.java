@@ -13,6 +13,7 @@ import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.Counter;
 import edu.wpi.first.wpilibj.DigitalInput;
+import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.ADXRS450_Gyro;
 import edu.wpi.first.wpilibj.SPI;
@@ -26,7 +27,8 @@ import edu.wpi.first.wpilibj.SPI;
 public class RobotMap {
 
     //Pneumatics stuff
-    public static DoubleSolenoid doubleSolenoid1, doubleSolenoid2;
+    public static DoubleSolenoid hatchDoubleSolenoid;
+    public static Solenoid lPillarSolenoid, platformSolenoid;
     public static Compressor c;
 
     //Drivebase motors
@@ -78,8 +80,9 @@ public class RobotMap {
         rightGrip = new WPI_TalonSRX(9);
 
         c = new Compressor(0);
-        doubleSolenoid1 = new DoubleSolenoid(2, 3);
-        doubleSolenoid2 = new DoubleSolenoid(0, 1);
+        hatchDoubleSolenoid = new DoubleSolenoid(2, 3);
+        lPillarSolenoid = new Solenoid(1);
+        platformSolenoid = new Solenoid(0);
 
         ai = new AnalogInput(3);
 

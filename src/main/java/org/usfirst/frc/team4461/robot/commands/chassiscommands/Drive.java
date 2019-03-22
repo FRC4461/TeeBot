@@ -30,9 +30,9 @@ public class Drive extends Command {
     @Override
     protected void execute() {
 
-        double xSpeed = OI.getLeftX();
-        double ySpeed = OI.getLeftY();
-        double zRotation = OI.getRightX();
+        double xSpeed = Robot.m_oi.getDriveSpeedX();
+        double ySpeed = Robot.m_oi.getDriveSpeedY();
+        double zRotation = Robot.m_oi.getDriveRotationZ();
 
         Robot.chassis.Driving(ySpeed, xSpeed, zRotation);
     }

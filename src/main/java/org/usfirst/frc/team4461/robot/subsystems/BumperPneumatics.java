@@ -8,9 +8,8 @@
 package org.usfirst.frc.team4461.robot.subsystems;
 
 import org.usfirst.frc.team4461.robot.RobotMap;
-import org.usfirst.frc.team4461.robot.commands.bumpercommands.OperateBumpers;;
+import org.usfirst.frc.team4461.robot.commands.bumpercommands.DefaultBumper;
 
-import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
@@ -21,15 +20,14 @@ public class BumperPneumatics extends Subsystem {
   @Override
   public void initDefaultCommand() {
     // Nicole: There is nothing in DefaultBumper(). But Vince said it was okay?
-    setDefaultCommand(new OperateBumpers());
+    setDefaultCommand(new DefaultBumper());
   }
 
-  // Todo: Review this. There are two sets of pneumatics for the bumper. I don't think this is complete.
-  public void detachBumper(){
-    RobotMap.doubleSolenoid2.set(Value.kForward);
+  public void attachBumperToPlatform(boolean isOn){
+    RobotMap.platformSolenoid.set(isOn);
   }
   
-  public void attachBumper(){
-    RobotMap.doubleSolenoid2.set(Value.kReverse);
+  public void attachBumperFromL(boolean isOn){
+    RobotMap.lPillarSolenoid.set(isOn);
   }
 }

@@ -1,5 +1,5 @@
 /*----------------------------------------------------------------------------*/
-/* Copyright (c) 2017-2018 FIRST. All Rights Reserved.                        */
+/* Copyright (c) 2018 FIRST. All Rights Reserved.                             */
 /* Open Source Software - may be modified and shared by FRC teams. The code   */
 /* must be accompanied by the FIRST BSD license file in the root directory of */
 /* the project.                                                               */
@@ -7,74 +7,77 @@
 
 package org.usfirst.frc.team4461.robot;
 
-import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.XboxController;
+import org.usfirst.frc.team4461.robot.OI;
+
 import edu.wpi.first.wpilibj.GenericHID.Hand;
 
 /**
- * This class is the glue that binds the controls on the physical operator
- * interface to the commands and command groups that allow control of the robot.
+ * drivebase
+ * Malakai -- xbox controller
+ * tyler -- joysticks
+
  */
-public class OI {
+public class DriverProfileTyler extends OI{
+    public DriverProfileTyler(){
+        
+    }
 
-	protected static Joystick leftJoystick = new Joystick(0);
-	protected static Joystick rightJoystick = new Joystick(1);
-
-	protected static XboxController minecraftPig = new XboxController(2);
-
-	public OI() {
-	}
-
-	// Default left driving control
+    @Override
 	public double getDriveSpeedX(){
 		return leftJoystick.getX();
 	}
 
-	// Default right driving control
-	public double getDriveSpeedY(){
+    @Override
+    public double getDriveSpeedY(){
 		return leftJoystick.getY();
 	}
 
+    @Override
 	public double getDriveRotationZ(){
 		return rightJoystick.getX();
 	}
 
+    @Override
 	public boolean getGripperPneumaticsForward(){
 		return minecraftPig.getBumper(Hand.kRight);
 	}
-
-	public boolean getGripperPneumaticsReverse(){
-		return minecraftPig.getBumper(Hand.kLeft);
-	}
-
+	
+	@Override
 	public boolean setLPillarPneumaticsOn(){
 		return minecraftPig.getAButton();
 	}
 
+	@Override
 	public boolean setLPillarPneumaticsOff(){
 		return minecraftPig.getBButton();
 	}
 
+	@Override
 	public boolean setPlatformPneumaticsOn(){
 		return minecraftPig.getYButton();
 	}
 
+	@Override
 	public boolean setPlatformPneumaticsOff(){
 		return minecraftPig.getXButton();
 	}
 
+    @Override
 	public double getPlatformDrive(){
 		return minecraftPig.getY(Hand.kLeft);
 	}
 
+    @Override
 	public double getArmDrive(){
 		return minecraftPig.getY(Hand.kRight);
 	}
 
+    @Override
 	public double getGripperWheelIntakeSpeed(){
 		return minecraftPig.getTriggerAxis(Hand.kRight);
 	}
 
+    @Override
 	public double getGripperWheelOuttakeSpeed(){
 		return minecraftPig.getTriggerAxis(Hand.kLeft);
 	}

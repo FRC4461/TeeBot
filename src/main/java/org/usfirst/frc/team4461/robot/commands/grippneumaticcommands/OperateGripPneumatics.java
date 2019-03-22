@@ -28,11 +28,11 @@ public class OperateGripPneumatics extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    boolean isAPressed  = OI.minecraftPig.getAButton();
-    boolean isBPressed  = OI.minecraftPig.getBButton();
-    if(isAPressed){
+    boolean setForward  = Robot.m_oi.getGripperPneumaticsForward();
+    boolean setReverse  = Robot.m_oi.getGripperPneumaticsReverse();
+    if(setForward){
       Robot.gripperPneumatics.pushPiston();
-    } else if(isBPressed){
+    } else if(setReverse){
       Robot.gripperPneumatics.pullPiston();
     }
   }

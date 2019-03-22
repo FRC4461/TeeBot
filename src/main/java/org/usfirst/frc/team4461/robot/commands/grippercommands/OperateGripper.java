@@ -29,8 +29,10 @@ public class OperateGripper extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double pigGripper = OI.pigLeftStickY();
-    Gripper.runGripper(pigGripper);
+    double intakeSpeed = Robot.m_oi.getGripperWheelIntakeSpeed();
+    double outtakeSpeed = Robot.m_oi.getGripperWheelOuttakeSpeed();
+    double diffAxis = intakeSpeed - outtakeSpeed;
+    Gripper.runGripper(diffAxis);
   }
 
   // Make this return true when this Command no longer needs to run execute()

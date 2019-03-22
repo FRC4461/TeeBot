@@ -40,16 +40,12 @@ public class Robot extends TimedRobot {
 	public static Gripper gripper = new Gripper();
 	public static GripPneumatics gripperPneumatics = new GripPneumatics();
 	public static BumperPneumatics bumperPneumatics = new BumperPneumatics();
-	public static OI oi;
-
-	public static double[] leftLengths, rightLengths;
-	public static double[] leftX1, leftX2, leftY1, leftY2;
-	public static double[] rightX1, rightX2, rightY1, rightY2;
+	public static OI m_oi;
 
 	Command m_autonomousCommand;
 	SendableChooser<Command> m_chooser = new SendableChooser<>();
 
-	NetworkTable gripTable, leftTable, rightTable;
+	NetworkTable driverProfileTable;
 
 	/**
 	 * This function is run when the robot is first started up and should be used
@@ -59,13 +55,16 @@ public class Robot extends TimedRobot {
 	public void robotInit() {
 		RobotMap.init();
 		chassis.init();
-		oi = new OI();
 		RobotMap.c.setClosedLoopControl(true);
 		
 		NetworkTableInstance inst = NetworkTableInstance.getDefault();
-		gripTable = inst.getTable("GRIP");
-		leftTable = gripTable.getSubTable("leftLineReport");
-		rightTable = gripTable.getSubTable("rightLineReport");
+		driverProfileTable = inst.getTable("DriverProfile");
+
+		if(driverProfileTable.getEntry("Profile").toString() == "1"){
+			m_oi = new DriverProfileTyler();
+		} else if (driverProfileTable.getEntry("Profile").toString() == "2"){
+			m_oi = new DriverProfileMalakai();
+		}
 
 		m_chooser.setDefaultOption("Default Auto", new Drive());
 		// chooser.addObject("My Auto", new MyAutoCommand());
@@ -143,20 +142,6 @@ public class Robot extends TimedRobot {
 	@Override
 	public void teleopPeriodic() {
 		Scheduler.getInstance().run();
-		leftX1 = leftTable.getEntry("x1").getDoubleArray(new double[] {});
-		leftX2 = leftTable.getEntry("x2").getDoubleArray(new double[] {});
-
-		rightX1 = leftTable.getEntry("x1").getDoubleArray(new double[] {});
-		rightX2 = leftTable.getEntry("x2").getDoubleArray(new double[] {});
-
-		leftY1 = leftTable.getEntry("y1").getDoubleArray(new double[] {});
-		leftY2 = leftTable.getEntry("y2").getDoubleArray(new double[] {});
-
-		rightY1 = leftTable.getEntry("y1").getDoubleArray(new double[] {});
-		rightY2 = leftTable.getEntry("y2").getDoubleArray(new double[] {});
-
-		leftLengths = leftTable.getEntry("length").getDoubleArray(new double[] {});
-		rightLengths = rightTable.getEntry("length").getDoubleArray(new double[] {});
 	}
 
 	/**
