@@ -5,31 +5,45 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package org.usfirst.frc.team4461.robot.commands.grippneumaticcommands;
-
+package org.usfirst.frc.team4461.robot.commands.bumpercommands;
 import org.usfirst.frc.team4461.robot.Robot;
-import org.usfirst.frc.team4461.robot.RobotMap;
 
-import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.command.Command;
 
-/**
- * Set default position for the gripper pneumatics (apparently).
- */
-public class DefaultPiston extends Command {
-  public DefaultPiston() {
-    requires(Robot.gripperPneumatics);
+public class DefaultBumper extends Command {
+  public DefaultBumper() {
+    // Use requires() here to declare subsystem dependencies
+    requires(Robot.bumperPneumatics);
   }
 
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    RobotMap.doubleSolenoid1.set(Value.kForward);
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+    boolean attachBumperToL = Robot.m_oi.setLPillarPneumaticsOn();
+    boolean deattachBumperToL = Robot.m_oi.setLPillarPneumaticsOff();
+
+    if(attachBumperToL){
+      Robot.bumperPneumatics.attachBumperFromL(true);
+    } else if(deattachBumperToL){
+      // For HONK HONK OH GEEBUS I SHOULD NOT HAVE PRESSED THAT
+      Robot.bumperPneumatics.attachBumperFromL(false);
+    }
+
+    boolean attachBumperToPlatform = Robot.m_oi.setPlatformPneumaticsOn();
+    boolean deattachBumperToPlatform = Robot.m_oi.setPlatformPneumaticsOff();
+
+    if (attachBumperToPlatform){
+      Robot.bumperPneumatics.attachBumperToPlatform(true);
+    } else if (deattachBumperToPlatform){
+      // For BEEP BEEP OH GOD I DIDN'T MEAN TO DO THAT
+      Robot.bumperPneumatics.attachBumperToPlatform(false);
+    }
+
   }
 
   // Make this return true when this Command no longer needs to run execute()

@@ -32,15 +32,9 @@ public class OperatePlatform extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double rightTriggerAxis = OI.pigRightTrigger();
-    double leftTriggerAxis = OI.pigLeftTrigger();
-    double differenceOfAxis = leftTriggerAxis - rightTriggerAxis;
+    double platformSpeed = Robot.m_oi.getPlatformDrive();
 
-    if (differenceOfAxis > deadZone || differenceOfAxis < deadZone) {
-        Robot.platform.platformMove(differenceOfAxis);
-    } else {
-        Robot.platform.stopPlatform();
-    }
+    Robot.platform.platformMove(platformSpeed);
   }
 
   // Make this return true when this Command no longer needs to run execute()
