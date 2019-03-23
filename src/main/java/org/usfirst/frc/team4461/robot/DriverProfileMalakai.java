@@ -80,7 +80,7 @@ public class DriverProfileMalakai extends OI{
 	}
 
 	@Override
-	public double getGripperWheelSpeed(){
+	public double getGripperWheelIntakeSpeed(){
 		return minecraftPig.getY(Hand.kRight);
 	}
 

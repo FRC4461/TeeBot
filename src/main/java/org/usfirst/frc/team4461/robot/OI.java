@@ -75,7 +75,7 @@ public class OI {
 		return minecraftPig.getTriggerAxis(Hand.kRight);
 	}
 
-	public double getGripperWheelSpeed(){
+	public double getGripperWheelIntakeSpeed(){
 		return minecraftPig.getY(Hand.kRight);
 	}
 
