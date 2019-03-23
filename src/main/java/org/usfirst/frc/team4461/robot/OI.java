@@ -82,4 +82,9 @@ public class OI {
 	public double getGripperWheelOuttakeSpeed(){
 		return minecraftPig.getY(Hand.kRight);
 	}
+
+	// uhh actually put a control here
+	public double getWristSpeed() {
+		return 0.1;
+	}
 }

@@ -31,10 +31,12 @@ public class MoveArm extends Command {
   protected void execute() {
     // double speed = -Robot.m_oi.getArmDrive() / 3;
 
-    double speedUp = OI.minecraftPig.getTriggerAxis(Hand.kRight);
-		double speedDown = OI.minecraftPig.getTriggerAxis(Hand.kLeft);
+    double speedUp = Robot.m_oi.getArmDriveUp();
+		double speedDown = Robot.m_oi.getArmDriveDown();
     double speed = (speedUp - speedDown) / 3;
 
+    double wrist = Robot.m_oi.getWristSpeed();
+    Arm.rotateWrist(wrist);
     Arm.move(speed);
   }
 

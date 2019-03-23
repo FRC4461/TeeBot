@@ -43,6 +43,7 @@ public class RobotMap {
 
     //Arm motor
     public static WPI_TalonSRX arm;
+    public static WPI_TalonSRX wrist;
 
     //Gripper motors
     public static WPI_TalonSRX leftGrip, rightGrip;
@@ -75,6 +76,7 @@ public class RobotMap {
         platformBack = new WPI_TalonSRX(7);
 
         arm = new WPI_TalonSRX(6);
+        wrist = new WPI_TalonSRX(10);
 
         leftGrip = new WPI_TalonSRX(8);
         rightGrip = new WPI_TalonSRX(9);

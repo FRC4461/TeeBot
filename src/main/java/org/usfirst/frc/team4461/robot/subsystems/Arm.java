@@ -27,6 +27,10 @@ public class Arm extends Subsystem {
     RobotMap.arm.set(ControlMode.PercentOutput, speed);
   }
   
+  public static void rotateWrist(double speed){
+    RobotMap.wrist.set(ControlMode.PercentOutput, speed);
+  }
+
   public static boolean getSwitch1(){
     return RobotMap.switch1.get();
   }
