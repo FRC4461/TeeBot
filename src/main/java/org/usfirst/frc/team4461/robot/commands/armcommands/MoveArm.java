@@ -10,6 +10,7 @@ package org.usfirst.frc.team4461.robot.commands.armcommands;
 import org.usfirst.frc.team4461.robot.OI;
 import org.usfirst.frc.team4461.robot.Robot;
 import org.usfirst.frc.team4461.robot.subsystems.Arm;
+import edu.wpi.first.wpilibj.GenericHID.Hand;
 
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -28,7 +29,12 @@ public class MoveArm extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double speed = Robot.m_oi.getArmDrive();
+    // double speed = -Robot.m_oi.getArmDrive() / 3;
+
+    double speedUp = OI.minecraftPig.getTriggerAxis(Hand.kRight);
+		double speedDown = OI.minecraftPig.getTriggerAxis(Hand.kLeft);
+    double speed = (speedUp - speedDown) / 3;
+
     Arm.move(speed);
   }
 

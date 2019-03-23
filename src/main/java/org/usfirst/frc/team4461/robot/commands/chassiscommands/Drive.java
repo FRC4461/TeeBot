@@ -32,7 +32,7 @@ public class Drive extends Command {
 
         double xSpeed = Robot.m_oi.getDriveSpeedX();
         double ySpeed = Robot.m_oi.getDriveSpeedY();
-        double zRotation = Robot.m_oi.getDriveRotationZ();
+        double zRotation = Robot.m_oi.getDriveRotationZ() / 3;
 
         Robot.chassis.Driving(ySpeed, xSpeed, zRotation);
     }

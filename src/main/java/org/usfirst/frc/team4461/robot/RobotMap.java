@@ -72,9 +72,9 @@ public class RobotMap {
         backLeft = new WPI_TalonSRX(4);
 
         platformFront = new WPI_TalonSRX(5);
-        platformBack = new WPI_TalonSRX(6);
+        platformBack = new WPI_TalonSRX(7);
 
-        arm = new WPI_TalonSRX(7);
+        arm = new WPI_TalonSRX(6);
 
         leftGrip = new WPI_TalonSRX(8);
         rightGrip = new WPI_TalonSRX(9);

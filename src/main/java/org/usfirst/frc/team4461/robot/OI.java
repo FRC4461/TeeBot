@@ -20,7 +20,7 @@ public class OI {
 	protected static Joystick leftJoystick = new Joystick(0);
 	protected static Joystick rightJoystick = new Joystick(1);
 
-	protected static XboxController minecraftPig = new XboxController(2);
+	public static XboxController minecraftPig = new XboxController(2);
 
 	public OI() {
 	}

@@ -20,13 +20,16 @@ public class Chassis extends Subsystem {
 	private static MecanumDrive mDrive;
 
 	public Chassis(){
-		mDrive = new MecanumDrive(RobotMap.frontLeft, RobotMap.backLeft, RobotMap.frontRight, RobotMap.backRight);
 	}
 
 	public void initDefaultCommand() {
 		setDefaultCommand(new Drive());
 	}
 
+	public void init(){
+		mDrive = new MecanumDrive(RobotMap.frontLeft, RobotMap.backLeft, RobotMap.frontRight, RobotMap.backRight);
+	}
+	
 	public void Driving(double ySpeed, double xSpeed, double zRotation) {
 		mDrive.driveCartesian(ySpeed, xSpeed, zRotation, RobotMap.gyro.getAngle());
 	}

@@ -54,6 +54,7 @@ public class Robot extends TimedRobot {
 	@Override
 	public void robotInit() {
 		RobotMap.init();
+		chassis.init();
 		RobotMap.c.setClosedLoopControl(true);
 		
 		NetworkTableInstance inst = NetworkTableInstance.getDefault();
