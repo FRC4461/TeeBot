@@ -8,11 +8,7 @@
 package org.usfirst.frc.team4461.robot.subsystems;
 
 import org.usfirst.frc.team4461.robot.RobotMap;
-<<<<<<< HEAD
-import org.usfirst.frc.team4461.robot.commands.bumpercommands.OperateBumpers;
-=======
 import org.usfirst.frc.team4461.robot.commands.bumpercommands.DefaultBumper;
->>>>>>> 57aaa6472626a4c55f289917af686db66633cbb0
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 
