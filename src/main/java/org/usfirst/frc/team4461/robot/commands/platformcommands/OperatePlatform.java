@@ -7,7 +7,6 @@
 
 package org.usfirst.frc.team4461.robot.commands.platformcommands;
 
-import org.usfirst.frc.team4461.robot.OI;
 import org.usfirst.frc.team4461.robot.Robot;
 import org.usfirst.frc.team4461.robot.RobotMap;
 

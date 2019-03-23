@@ -19,7 +19,6 @@ public class BumperPneumatics extends Subsystem {
 
   @Override
   public void initDefaultCommand() {
-    // Nicole: There is nothing in DefaultBumper(). But Vince said it was okay?
     setDefaultCommand(new DefaultBumper());
   }
 
