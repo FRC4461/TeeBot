@@ -54,7 +54,6 @@ public class Robot extends TimedRobot {
 	@Override
 	public void robotInit() {
 		RobotMap.init();
-		chassis.init();
 		RobotMap.c.setClosedLoopControl(true);
 		
 		NetworkTableInstance inst = NetworkTableInstance.getDefault();
@@ -64,6 +63,8 @@ public class Robot extends TimedRobot {
 			m_oi = new DriverProfileTyler();
 		} else if (driverProfileTable.getEntry("Profile").toString() == "2"){
 			m_oi = new DriverProfileMalakai();
+		} else {
+			m_oi = new OI();
 		}
 
 		m_chooser.setDefaultOption("Default Auto", new Drive());

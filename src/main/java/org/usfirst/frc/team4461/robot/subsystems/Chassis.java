@@ -19,12 +19,12 @@ import edu.wpi.first.wpilibj.drive.MecanumDrive;
 public class Chassis extends Subsystem {
 	private static MecanumDrive mDrive;
 
-	public void initDefaultCommand() {
-		setDefaultCommand(new Drive());
+	public Chassis(){
+		mDrive = new MecanumDrive(RobotMap.frontLeft, RobotMap.backLeft, RobotMap.frontRight, RobotMap.backRight);
 	}
 
-	public void init() {
-		mDrive = new MecanumDrive(RobotMap.frontLeft, RobotMap.backLeft, RobotMap.frontRight, RobotMap.backRight);
+	public void initDefaultCommand() {
+		setDefaultCommand(new Drive());
 	}
 
 	public void Driving(double ySpeed, double xSpeed, double zRotation) {

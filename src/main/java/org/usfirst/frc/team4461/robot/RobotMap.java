@@ -66,9 +66,9 @@ public class RobotMap {
     public static ADXRS450_Gyro gyro;
 
     public static void init() {
-        backRight = new WPI_TalonSRX(1);
-        frontLeft = new WPI_TalonSRX(2);
-        frontRight = new WPI_TalonSRX(3);
+        backRight = new WPI_TalonSRX(2);
+        frontLeft = new WPI_TalonSRX(3);
+        frontRight = new WPI_TalonSRX(1);
         backLeft = new WPI_TalonSRX(4);
 
         platformFront = new WPI_TalonSRX(5);
