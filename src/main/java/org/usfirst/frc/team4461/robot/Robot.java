@@ -7,8 +7,6 @@
 
 package org.usfirst.frc.team4461.robot;
 
-import edu.wpi.first.networktables.NetworkTable;
-import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -45,8 +43,6 @@ public class Robot extends TimedRobot {
 	Command m_autonomousCommand;
 	SendableChooser<Command> m_chooser = new SendableChooser<>();
 
-	NetworkTable driverProfileTable;
-
 	/**
 	 * This function is run when the robot is first started up and should be used
 	 * for any initialization code.
@@ -56,17 +52,8 @@ public class Robot extends TimedRobot {
 		RobotMap.init();
 		chassis.init();
 		RobotMap.c.setClosedLoopControl(true);
-		
-		NetworkTableInstance inst = NetworkTableInstance.getDefault();
-		driverProfileTable = inst.getTable("DriverProfile");
 
-		if(driverProfileTable.getEntry("Profile").toString() == "1"){
-			m_oi = new DriverProfileTyler();
-		} else if (driverProfileTable.getEntry("Profile").toString() == "2"){
-			m_oi = new DriverProfileMalakai();
-		} else {
-			m_oi = new OI();
-		}
+		m_oi = new OI();
 
 		m_chooser.setDefaultOption("Default Auto", new Drive());
 		// chooser.addObject("My Auto", new MyAutoCommand());
