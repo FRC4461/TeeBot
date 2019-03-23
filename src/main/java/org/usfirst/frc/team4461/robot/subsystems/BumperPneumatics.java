@@ -8,7 +8,7 @@
 package org.usfirst.frc.team4461.robot.subsystems;
 
 import org.usfirst.frc.team4461.robot.RobotMap;
-import org.usfirst.frc.team4461.robot.commands.bumpercommands.OperateBumpers;;
+import org.usfirst.frc.team4461.robot.commands.bumpercommands.OperateBumpers;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.command.Subsystem;
