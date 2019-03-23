@@ -22,6 +22,8 @@ import org.usfirst.frc.team4461.robot.subsystems.GripPneumatics;
 import org.usfirst.frc.team4461.robot.subsystems.Gripper;
 import org.usfirst.frc.team4461.robot.subsystems.Platform;
 import org.usfirst.frc.team4461.robot.subsystems.Ultrasound;
+import org.usfirst.frc.team4461.robot.DriverProfileTyler;
+import org.usfirst.frc.team4461.robot.DriverProfileMalakai;
 
 /**
  * The VM is configured to automatically run this class, and to call the
