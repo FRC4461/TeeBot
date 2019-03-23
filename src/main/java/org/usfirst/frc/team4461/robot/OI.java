@@ -67,15 +67,19 @@ public class OI {
 		return minecraftPig.getY(Hand.kLeft);
 	}
 
-	public double getArmDrive(){
-		return minecraftPig.getY(Hand.kRight);
+	public double getArmDriveUp(){
+		return minecraftPig.getTriggerAxis(Hand.kLeft);
 	}
 
-	public double getGripperWheelIntakeSpeed(){
+	public double getArmDriveDown(){
 		return minecraftPig.getTriggerAxis(Hand.kRight);
 	}
 
+	public double getGripperWheelSpeed(){
+		return minecraftPig.getY(Hand.kRight);
+	}
+
 	public double getGripperWheelOuttakeSpeed(){
-		return minecraftPig.getTriggerAxis(Hand.kLeft);
+		return minecraftPig.getY(Hand.kRight);
 	}
 }

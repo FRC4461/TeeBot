@@ -69,18 +69,23 @@ public class DriverProfileMalakai extends OI{
 		return leftJoystick.getY();
 	}
 
-    @Override
-	public double getArmDrive(){
-		return rightJoystick.getY();
+	@Override
+	public double getArmDriveUp(){
+		return minecraftPig.getTriggerAxis(Hand.kLeft);
 	}
 
-    @Override
-	public double getGripperWheelIntakeSpeed(){
+	@Override
+	public double getArmDriveDown(){
 		return minecraftPig.getTriggerAxis(Hand.kRight);
 	}
 
-    @Override
+	@Override
+	public double getGripperWheelSpeed(){
+		return minecraftPig.getY(Hand.kRight);
+	}
+
+	@Override
 	public double getGripperWheelOuttakeSpeed(){
-		return minecraftPig.getTriggerAxis(Hand.kLeft);
+		return minecraftPig.getY(Hand.kRight);
 	}
 }
