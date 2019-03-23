@@ -7,9 +7,8 @@
 
 package org.usfirst.frc.team4461.robot.commands.grippercommands;
 
-import org.usfirst.frc.team4461.robot.OI;
 import org.usfirst.frc.team4461.robot.Robot;
-import org.usfirst.frc.team4461.robot.subsystems.Gripper;
+import org.usfirst.frc.team4461.robot.subsystems.GripperWheels;
 
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -32,7 +31,7 @@ public class OperateGripper extends Command {
     double intakeSpeed = Robot.m_oi.getGripperWheelIntakeSpeed();
     double outtakeSpeed = Robot.m_oi.getGripperWheelOuttakeSpeed();
     double diffAxis = intakeSpeed - outtakeSpeed;
-    Gripper.runGripper(diffAxis);
+    GripperWheels.runGripper(diffAxis);
   }
 
   // Make this return true when this Command no longer needs to run execute()

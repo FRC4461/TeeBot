@@ -20,7 +20,6 @@ public class GripPneumatics extends Subsystem {
 
   @Override
   public void initDefaultCommand() {
-    // Nicole: I'm not entirely convinced that DefaultPiston() is the correct command here.
     setDefaultCommand(new OperateGripPneumatics());
   }
 

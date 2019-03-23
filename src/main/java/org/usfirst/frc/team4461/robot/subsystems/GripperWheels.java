@@ -18,7 +18,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  * Gripper wheels subsystem. (the name of the subsystem does not accurately reflect this, I know.
  * Blame Vince.)
  */
-public class Gripper extends Subsystem {
+public class GripperWheels extends Subsystem {
   @Override
   public void initDefaultCommand() {
     setDefaultCommand(new OperateGripper());
